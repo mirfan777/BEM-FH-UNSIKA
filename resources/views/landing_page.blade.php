@@ -261,7 +261,7 @@
                         
                         <div>
                             <label class="block text-sm font-semibold mb-2">Pesan</label>
-                            <textarea id="pesan" rows="5" placeholder="Tulis pesan anda" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800"></textarea>
+                            <textarea id="pesan" rows="5" placeholder="Tulis pesan anda" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800" maxlength="5"></textarea>
                         </div>
                         
                         <button type="submit" class="btn-primary text-white px-8 py-3 rounded font-medium w-full">
