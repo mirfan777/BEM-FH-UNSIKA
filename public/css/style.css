@@ -1,0 +1,120 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200') center/cover;
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+.nav-link:hover {
+    color: #991b1b;
+}
+
+.btn-primary {
+    background-color: #7f1d1d;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #991b1b;
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+    background-color: white;
+    color: #7f1d1d;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.footer-bg {
+    background-color: #0f172a;
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #991b1b;
+}
+
+.btn-primary {
+    background-color: #7f1d1d;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #991b1b;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.footer-bg {
+    background-color: #0f172a;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #7f1d1d;
+}
+
+.filter-btn {
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #f3f4f6;
+}
+
+/* Modal & Checkmark Animations */
+.modal-overlay { animation: fadeIn 0.3s ease-out; }
+.modal-overlay.closing { animation: fadeOut 0.3s ease-out; }
+
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes fadeOut { from {opacity:1;} to {opacity:0;} }
+
+.modal-content { animation: slideUp 0.4s ease-out; }
+.modal-content.closing { animation: slideDown 0.3s ease-out; }
+
+@keyframes slideUp {
+    from { transform: translateY(50px) scale(0.9); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}
+@keyframes slideDown {
+    from { transform: translateY(0) scale(1); opacity: 1; }
+    to { transform: translateY(50px) scale(0.9); opacity: 0; }
+}
+
+.checkmark-container { animation: scaleIn 0.5s ease-out 0.2s both; }
+@keyframes scaleIn {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.checkmark {
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: drawCheck 0.6s ease-out 0.5s forwards;
+}
+@keyframes drawCheck { to { stroke-dashoffset: 0; } }
