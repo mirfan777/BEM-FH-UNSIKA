@@ -1,12 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Settings\SiteProfile;
+use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\LandingController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/blog/{slug}', function ($slug) {
-    $blog = \App\Models\Blog::where('slug', $slug)->firstOrFail();
-    return view('blog.show', compact('blog'));
-});
+Route::get('/', LandingController::class . '@index');
+Route::get('/kegiatan', KegiatanController::class . '@index');
+Route::get('/kegiatan/{slug}', KegiatanController::class . '@show')->name('blog.show');

@@ -7,8 +7,6 @@ use Spatie\LaravelSettings\Settings;
 class SiteProfile extends Settings
 {
     public string $logo;
-    public string $visi;
-    public string $misi;
     public string $alamat;
     public string $whatsapp;
     public string $lokasi_gmaps;  

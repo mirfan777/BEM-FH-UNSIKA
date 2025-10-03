@@ -42,27 +42,11 @@ class ManageSiteProfile extends SettingsPage
                                 '4:3',
                                 '1:1',
                             ])
-                            ->directory('site-profile')
+                            ->disk('public') 
                             ->visibility('public')
                             ->maxSize(2048)
                             ->acceptedFileTypes(['image/png', 'image/jpg', 'image/jpeg', 'image/gif'])
                             ->helperText('Format: PNG, JPG, JPEG, GIF. Maksimal 2MB')
-                            ->columnSpanFull(),
-                        
-                        Textarea::make('visi')
-                            ->label('Visi')
-                            ->rows(4)
-                            ->placeholder('Masukkan visi organisasi/perusahaan...')
-                            ->maxLength(1000)
-                            ->helperText('Maksimal 1000 karakter')
-                            ->columnSpanFull(),
-                        
-                        Textarea::make('misi')
-                            ->label('Misi')
-                            ->rows(5)
-                            ->placeholder('Masukkan misi organisasi/perusahaan...')
-                            ->maxLength(2000)
-                            ->helperText('Maksimal 2000 karakter')
                             ->columnSpanFull(),
 
                         Textarea::make('alamat')

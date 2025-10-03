@@ -23,7 +23,7 @@ class BlogForm
                         FileUpload::make('thumbnail')
                             ->label('Thumbnail')
                             ->image()
-                            ->directory('blog-thumbnails')
+                            ->disk('public')
                             ->visibility('public')
                             ->columnSpanFull(),
                             
