@@ -139,20 +139,21 @@
                 </div>
                 
                 <div>
-                    <form id="contactForm" class="space-y-6">
+                    <form id="contactForm" action="{{ route('submit.form') }}" method="POST" class="space-y-6">
+                        @csrf
                         <div>
                             <label class="block text-sm font-semibold mb-2">Nama</label>
-                            <input type="text" id="nama" placeholder="Nama lengkap anda" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800">
+                            <input type="text" id="nama" name="name" placeholder="Nama lengkap anda" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800">
                         </div>
                         
                         <div>
                             <label class="block text-sm font-semibold mb-2">Email</label>
-                            <input type="email" id="email" placeholder="Email anda" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800">
+                            <input type="email" id="email" name="email" placeholder="Email anda" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800">
                         </div>
                         
                         <div>
                             <label class="block text-sm font-semibold mb-2">Pesan</label>
-                            <textarea id="pesan" rows="5" placeholder="Tulis pesan anda" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800" maxlength="5"></textarea>
+                            <textarea id="pesan" name="message" rows="5" placeholder="Tulis pesan anda" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800" maxlength="5"></textarea>
                         </div>
                         
                         <button type="submit" class="btn-primary text-white px-8 py-3 rounded font-medium w-full">
@@ -164,27 +165,69 @@
         </div>
     </section>
 
-        <!-- Success Modal -->
-    <div id="successModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center modal-overlay">
-        <div id="modalContent" class="bg-white rounded-lg p-8 max-w-md mx-4 transform transition-all modal-content">
-            <div class="text-center">
+    
+    @if(session('success'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('notification-modal');
+            const backdrop = document.createElement('div');
+            backdrop.className = 'bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-40';
+            
+            if (modal) {
+                // Add backdrop
+                document.body.appendChild(backdrop);
+                
+                // Show modal
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                modal.setAttribute('aria-hidden', 'false');
+                
+                // Close modal functionality
+                const closeButton = modal.querySelector('[data-modal-hide="notification-modal"]');
+                if (closeButton) {
+                    closeButton.addEventListener('click', function() {
+                        modal.classList.add('hidden');
+                        modal.classList.remove('flex');
+                        modal.setAttribute('aria-hidden', 'true');
+                        document.body.removeChild(backdrop);
+                    });
+                }
+                
+                // Close on backdrop click
+                backdrop.addEventListener('click', function() {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                    modal.setAttribute('aria-hidden', 'true');
+                    document.body.removeChild(backdrop);
+                });
+            }
+        });
+    </script>
+
+    <div id="notification-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[999] justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-xl max-h-full z-[999]">
+        <div class="relative bg-white rounded-lg shadow-sm ">
+            <div class="p-4 md:p-5 space-y-4 text-center">
                 <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4 checkmark-container">
                     <svg class="h-8 w-8 text-green-600 checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">Pesan Berhasil Dikirim!</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">data berhasil</h3>
                 <p class="text-gray-600 mb-6">Terima kasih telah menghubungi kami. Kami akan segera merespon pesan Anda.</p>
-                <button onclick="closeModal()" class="btn-primary text-white px-6 py-3 rounded font-medium w-full">
+                <button data-modal-hide="notification-modal" type="button" class="btn-primary text-white px-6 py-3 rounded font-medium w-full">
                     Tutup
                 </button>
             </div>
         </div>
     </div>
+</div>
+@endif
+
 
 
     <!-- Script -->
-    <script src="{{ asset('js/script.js') }}"></script>
+  
 </x-guest.layout>
 </body>
 </html>
