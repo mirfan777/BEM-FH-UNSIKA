@@ -8,3 +8,4 @@ use App\Http\Controllers\LandingController;
 Route::get('/', LandingController::class . '@index');
 Route::get('/kegiatan', KegiatanController::class . '@index');
 Route::get('/kegiatan/{slug}', KegiatanController::class . '@show')->name('blog.show');
+

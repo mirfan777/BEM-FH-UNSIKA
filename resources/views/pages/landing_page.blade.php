@@ -16,12 +16,12 @@
     <section class="hero-section flex items-center mt-16" style="min-height: 600px;">
         <div class="w-full px-6 lg:px-24">
             <div class="max-w-2xl">
-                <h1 class="text-5xl font-bold text-white mb-4">Selamat Datang</h1>
-                <p class="text-white text-lg mb-8">Lorem ipsum dolor sit amet</p>
+                <h1 class="text-5xl font-bold text-white mb-4">BEM-KM FH UNSIKA</h1>
+                <p class="text-white text-lg mb-8">Mengabdi, berinovasi, dan berkontribusi demi kemajuan Fakultas Hukum Unsika.</p>
                 <div class="flex gap-4">
-                    <a href="#kontak">
+                    <!--<a href="#kontak">
                         <button class="btn-primary text-white px-8 py-3 rounded font-medium">Hubungi Kami</button>
-                    </a>
+                    </a> -->
                     <a href="#tentang">
                         <button class="btn-secondary text-white px-8 py-3 rounded font-medium">Selengkapnya</button>
                     </a>
@@ -35,22 +35,17 @@
         <div class="mx-auto px-6" style="padding-left: 100px; padding-right: 100px;">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="relative">
-                    <img src="{{ asset('images/landing_image.png') }}" alt="Students" class="">
+                    <img src="{{ asset('images/landing_image.png') }}" alt="Students" class="rounded-3xl shadow-lg">
                 </div>
                 
                 <div>
                     <p class="text-red-800 font-semibold mb-2">Tentang Kami</p>
                     <h2 class="text-4xl font-bold mb-6">BEM KM Fakultas Hukum UNSIKA</h2>
                     <p class="text-gray-600 leading-relaxed mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in vehicula est. 
-                        Pellentesque quis sodio elit et dictum faucibus. Nam vitae maximus ex. 
-                        Pellentesque laoreet elit tellus, id fringilla nunc tincidunt vel.
+                        Badan Eksekutif Mahasiswa Keluarga Mahasiswa Fakultas Hukum Universitas Singaperbangsa Karawang (BEM-KM FH Unsika) merupakan organisasi mahasiswa yang berperan sebagai wadah aspirasi, penggerak perjuangan, serta sarana pengembangan diri bagi seluruh mahasiswa Fakultas Hukum. Dengan semangat kebersamaan dan profesionalitas, BEM-KM FH Unsika hadir untuk memperjuangkan keadilan yang inklusif serta kesejahteraan mahasiswa dalam ranah akademik maupun nonakademik. Kami berkomitmen untuk mewujudkan lingkungan yang progresif, adaptif, dan berorientasi pada kemajuan bersama seluruh elemen mahasiswa.
                     </p>
                     <p class="text-gray-600 leading-relaxed">
-                        Quisque molestie risus. Praesent nec diam in arcu facilisis laoreet. Integer 
-                        pharetra nunc vel elit dignissim, sed iaculis libero cursus. Cras sed id dapibus 
-                        libero. Sed est amet, consectetur adipiscing elit. Etiam nec pretium nibh. Praesent 
-                        nisi cursus magna, id amet tincidunt risus mi lacus. Suspendisse sed id mi nec.
+                        Dalam menjalankan perannya, BEM-KM FH Unsika berlandaskan visi untuk menjadi organisasi yang unggul dalam memperjuangkan keadilan inklusif demi kesejahteraan dan pengembangan mahasiswa. Misi kami mencakup pembangunan internal yang berdaya saing, komunikasi yang efektif, peran aktif dalam isu sosial politik, serta kolaborasi lintas bidang dan lembaga. Melalui berbagai program kerja dan kegiatan kolaboratif, kami berupaya menciptakan budaya kesejahteraan yang merata dan lingkungan kampus yang harmonis, tanpa memandang latar belakang atau kepentingan apa pun.
                     </p>
                 </div>
             </div>
@@ -63,30 +58,67 @@
             <div class="grid md:grid-cols-2 gap-16">
                 <div class="flex flex-col items-center">
                     <h2 class="text-3xl font-bold text-red-800 mb-8 text-center">Visi</h2>
-                    <p class="text-gray-600 text-center">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, enim.
-                    </p>
+                    <ol class="space-y-4">
+                        <li class="flex">
+                            <span class="font-bold mr-3">1.</span>
+                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
+                        </li>
+                        <li class="flex">
+                            <span class="font-bold mr-3">2.</span>
+                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
+                        </li>
+                        <li class="flex">
+                            <span class="font-bold mr-3">3.</span>
+                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
+                        </li>
+                        <li class="flex">
+                            <span class="font-bold mr-3">4.</span>
+                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
+                        </li>
+                    </ol>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <h2 class="text-3xl font-bold text-red-800 mb-8 text-center">Misi</h2>
+                    <ol class="space-y-4">
+                        <li class="flex">
+                            <span class="font-bold mr-3">1.</span>
+                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
+                        </li>
+                        <li class="flex">
+                            <span class="font-bold mr-3">2.</span>
+                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
+                        </li>
+                        <li class="flex">
+                            <span class="font-bold mr-3">3.</span>
+                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
+                        </li>
+                        <li class="flex">
+                            <span class="font-bold mr-3">4.</span>
+                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
+                        </li>
+                    </ol>
                 </div>
             </div>
         </div>
     </section>
+
 
         <!-- Activities Section -->
     <section class="py-24 bg-white" id="kegiatan">
         <div class="mx-auto px-6" style="padding-left: 100px; padding-right: 100px;">
             <div class="grid md:grid-cols-2 gap-8 items-start mb-12">
                 <div>
-                    <p class="text-red-800 font-semibold mb-2">Kegiatan Kami</p>
-                    <h2 class="text-4xl font-bold">Kegiatan BEM KM FH UNSIKA</h2>
+                    <p class="text-red-800 font-semibold mb-2">Publikasi</p>
+                    <h2 class="text-4xl font-bold">Kajian Aksi dan Strategi BEM-KM FH Unsika</h2>
                 </div>
                 <div>
                     <p class="text-gray-600 mb-6">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in vehicula ex. 
-                        Pellentesque sollicitudin ex et dictum faucibus. Nunc vitae massa et arcu varius ultrices ut et lectus.
+                       Temukan berbagai publikasi berisi gagasan, hasil riset, dan analisis kritis BEM-KM FH Unsika terhadap isu-isu hukum, sosial, dan kemahasiswaan!
                     </p>
                     <a href="{{ url('/kegiatan') }}" >
-                    <button class="text-blue-600 border-2 border-blue-600 px-6 py-2 rounded hover:bg-blue-600 hover:text-white transition">
-                        Lebih Banyak
+                    <button class="text-red-900 border-2 border-red-900 px-6 py-2 rounded hover:bg-red-900 hover:text-white transition">
+                        <b>Lebih Banyak</b>
                     </button></a>
                 </div>
             </div>
@@ -132,9 +164,9 @@
             <div class="grid md:grid-cols-2 gap-16">
                 <div>
                     <p class="text-red-800 font-semibold mb-2">Hubungi Kami</p>
-                    <h2 class="text-4xl font-bold mb-6">Kirimkan pesanmu melalui form di samping</h2>
+                    <h2 class="text-4xl font-bold mb-6">Kirimkan pesan Anda melalui formulir ini!</h2>
                     <p class="text-gray-600 leading-relaxed">
-                        Pesan yang kamu kirim akan kami terima dan kami akan segera melakukan tindak lanjut.
+                        Pesan yang Anda kirimkan akan kami terima melalui email kami. Kami akan segera menghubungi untuk tindak lanjut.
                     </p>
                 </div>
                 
@@ -155,7 +187,7 @@
                             <textarea id="pesan" rows="5" placeholder="Tulis pesan anda" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800" maxlength="5"></textarea>
                         </div>
                         
-                        <button type="submit" class="btn-primary text-white px-8 py-3 rounded font-medium w-full">
+                        <button type="submit" class="btn-pesan text-white px-8 py-3 rounded font-medium w-full bg-red-900 hover:bg-red-800 transition">
                             Kirim Pesan
                         </button>
                     </form>

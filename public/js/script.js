@@ -85,3 +85,13 @@ searchInput.addEventListener('input', function(e) {
         }
     });
 });
+
+//carousel struktur
+function scrollCarousel(section, direction) {
+    const carousel = document.getElementById(section + '-carousel');
+    const scrollAmount = 280; // card width + gap
+    carousel.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+    });
+}
