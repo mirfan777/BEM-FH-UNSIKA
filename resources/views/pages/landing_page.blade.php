@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEM FH UNSIKA</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="icon" href="{{ asset('storage/' . $siteProfile->logo) }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body class="font-sans">
@@ -32,10 +33,10 @@
 
     <!-- About Section -->
     <section class="py-24 bg-white" id="tentang">
-        <div class="mx-auto px-6" style="padding-left: 100px; padding-right: 100px;">
+        <div class="mx-auto md:px-40 px-6">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="relative">
-                    <img src="{{ asset('images/landing_image.png') }}" alt="Students" class="rounded-3xl shadow-lg">
+                    <img src="{{ asset('images/landing_image.png') }}" alt="Students" class="rounded-3xl">
                 </div>
                 
                 <div>
@@ -54,7 +55,7 @@
 
     <!-- Visi Misi Section -->
     <section class="py-24 bg-gray-50" id="visi-misi">
-        <div class="mx-auto px-6" style="padding-left: 100px; padding-right: 100px">
+        <div class="mx-auto md:px-40 px-6" >
             <div class="grid md:grid-cols-2 gap-16">
                 <div class="flex flex-col items-center">
                     <h2 class="text-3xl font-bold text-red-800 mb-8 text-center">Visi</h2>
@@ -106,7 +107,7 @@
 
         <!-- Activities Section -->
     <section class="py-24 bg-white" id="kegiatan">
-        <div class="mx-auto px-6" style="padding-left: 100px; padding-right: 100px;">
+        <div class="mx-auto md:px-40 px-6">
             <div class="grid md:grid-cols-2 gap-8 items-start mb-12">
                 <div>
                     <p class="text-red-800 font-semibold mb-2">Publikasi</p>
@@ -160,7 +161,7 @@
 
         <!-- Contact Section -->
     <section class="py-24 bg-gray-50" id="kontak" style="margin-bottom: 80px">
-        <div class="mx-auto px-6" style="padding-left: 100px; padding-right: 100px">
+        <div class="mx-auto md:px-40 px-6" >
             <div class="grid md:grid-cols-2 gap-16">
                 <div>
                     <p class="text-red-800 font-semibold mb-2">Hubungi Kami</p>
@@ -185,7 +186,7 @@
                         
                         <div>
                             <label class="block text-sm font-semibold mb-2">Pesan</label>
-                            <textarea id="pesan" name="message" rows="5" placeholder="Tulis pesan anda" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800" maxlength="5"></textarea>
+                            <textarea id="pesan" name="message" rows="5" placeholder="Tulis pesan anda" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800" maxlength="500"></textarea>
                         </div>
                         
                         <button type="submit" class="btn-pesan text-white px-8 py-3 rounded font-medium w-full bg-red-900 hover:bg-red-800 transition">
@@ -237,7 +238,7 @@
     </script>
 
     <div id="notification-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[999] justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-    <div class="relative p-4 w-full max-w-xl max-h-full z-[999]">
+    <div class="relative p-4 w-full max-w-xl max-h-full z-[9999999]">
         <div class="relative bg-white rounded-lg shadow-sm ">
             <div class="p-4 md:p-5 space-y-4 text-center">
                 <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4 checkmark-container">

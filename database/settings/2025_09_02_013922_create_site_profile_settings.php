@@ -10,7 +10,7 @@ return new class extends SettingsMigration {
         $this->migrator->add('site_profile.misi', '');
         $this->migrator->add('site_profile.whatsapp', '');
         $this->migrator->add('site_profile.alamat', '');
-        $this->migrator->add('site_profile.lokasi_gmaps', '');
+        $this->migrator->add('site_profile.email', null);
         $this->migrator->add('site_profile.facebook', null);
         $this->migrator->add('site_profile.instagram', null);
         $this->migrator->add('site_profile.tiktok', null);

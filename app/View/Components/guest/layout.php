@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use App\Settings\SiteProfile;
+use App\Models\Division;
 
 class layout extends Component
 {
@@ -14,7 +15,7 @@ class layout extends Component
      */
     public function __construct()
     {
-        //
+        
     }
 
     /**
@@ -24,6 +25,7 @@ class layout extends Component
     {
         return view('components.guest.layout' , [
             'siteProfile' => app(SiteProfile::class),
+            'divisions' => Division::get()
         ]);
     }
 }

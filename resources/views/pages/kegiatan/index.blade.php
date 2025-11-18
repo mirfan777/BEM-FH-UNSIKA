@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kegiatan - BEM FH UNSIKA</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="icon" href="{{ asset('storage/' . $siteProfile->logo) }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body class="font-sans bg-white">

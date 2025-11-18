@@ -31,21 +31,17 @@
                         
                         <!-- Dropdown Menu -->
                         <ul class="absolute left-0 top-full mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="font-size: 12px;">
-                            <li>
-                                <a href="{{ url('/struktur_organisasi') }}" class="block px-4 py-2 text-gray-700 hover:bg-red-900 hover:text-white rounded-t-lg">
-                                    Divisi Gooning
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/struktur_divisi') }}" class="block px-4 py-2 text-gray-700 hover:bg-red-900 hover:text-white">
-                                    Divisi orang kulit putih
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/struktur_kepegawaian') }}" class="block px-4 py-2 text-gray-700 hover:bg-red-900  hover:text-white rounded-b-lg">
-                                    Divisi orang kulit hitam
-                                </a>
-                            </li>
+                            @forelse($divisions as $division)
+                                <li>
+                                    <a href="{{ route('struktur.show', $division->name) }}" class="block px-4 py-2 text-gray-700 hover:bg-red-900 hover:text-white {{ $loop->first ? 'rounded-t-lg' : '' }} {{ $loop->last ? 'rounded-b-lg' : '' }}">
+                                        {{ $division->name }}
+                                    </a>
+                                </li>
+                            @empty
+                                <li>
+                                    <span class="block px-4 py-2 text-gray-500">Tidak ada divisi</span>
+                                </li>
+                            @endforelse
                         </ul>
                     </li>
                     <li>
@@ -65,7 +61,7 @@
     </main>
 
     <footer class="footer-bg text-white py-20" id="footer" style="background-color: #;">
-        <div class="mx-auto px-6" style="padding-left: 100px; padding-right: 100px;">
+        <div class="mx-auto md:px-40 px-6">
             <div class="grid md:grid-cols-4 gap-12 mb-12">
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
@@ -90,10 +86,7 @@
                 <div>
                     <h3 class="font-bold mb-4">Alamat</h3>
                     <p class="text-white text-sm leading-relaxed">
-                        Ruang Sekre KM FH Unsika<br>
-                        Jl. HS. Ronggo Waluyo, Puseurjaya,<br>
-                        Kec. Telukjambe Timur, Karawang<br>
-                        Jawa Barat, Indonesia
+                        {{ $siteProfile->alamat }}
                     </p>
                 </div>
                 
@@ -107,8 +100,7 @@
                                 </svg>
                             </div>
                             <div class="text-sm">
-                                <div class="text-white">+6221-1471-9435</div>
-                                <div class="text-white">+6221-1471-9435</div>
+                                {{ $siteProfile->whatsapp }}
                             </div>
                         </div>
                         
@@ -120,7 +112,7 @@
                                 </svg>
                             </div>
                             <div class="text-sm text-white">
-                                bemkm.fh@mail.com
+                                
                             </div>
                         </div>
                     </div>

@@ -23,7 +23,7 @@ class ManageSiteProfile extends SettingsPage
     
     protected static ?string $navigationLabel = 'Profil Situs';
     
-    protected static ?int $navigationSort = 1;
+    protected static ?int $navigationSort = 3;
 
     public function form(Schema $schema): Schema
     {
@@ -66,26 +66,10 @@ class ManageSiteProfile extends SettingsPage
                             ->maxLength(20)
                             ->columnSpanFull(),
                         
-                        Placeholder::make('wa_preview')
-                            ->label('Link WhatsApp')
-                            ->content(function ($get) {
-                                $wa = $get('whatsapp');
-                                if ($wa) {
-                                    return new \Illuminate\Support\HtmlString(
-                                        '<a href="https://wa.me/' . $wa . '" target="_blank" class="text-blue-600 hover:text-blue-800">
-                                            https://wa.me/' . $wa . '
-                                        </a>'
-                                    );
-                                }
-                                return 'Belum ada nomor WhatsApp';
-                            })
-                            ->columnSpanFull(),
-                        
-                        Textarea::make('lokasi_gmaps')
-                            ->label('Google Maps Embed Code')
-                            ->rows(4)
-                            ->placeholder('<iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>')
-                            ->helperText('Paste kode embed dari Google Maps. Untuk mendapatkan kode: buka Google Maps → pilih lokasi → Share → Embed → Copy HTML')
+                        TextInput::make('email')
+                            ->label('Alamat Email')
+                            ->email()
+                            ->placeholder('example@mail.com')
                             ->columnSpanFull(),
                         
                         TextInput::make('facebook')

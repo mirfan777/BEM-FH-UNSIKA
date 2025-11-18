@@ -8,8 +8,8 @@ class SiteProfile extends Settings
 {
     public string $logo;
     public string $alamat;
-    public string $whatsapp;
-    public string $lokasi_gmaps;  
+    public string $whatsapp;  
+    public ?string $email;
     public ?string $facebook;     
     public ?string $instagram;      
     public ?string $tiktok;       
