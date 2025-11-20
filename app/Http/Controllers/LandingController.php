@@ -14,7 +14,7 @@ class LandingController extends Controller
     {
         return view('pages.landing_page' , [
             'siteProfile' => app(SiteProfile::class),
-            'latestBlogs' => Blog::latest()->take(5)->get(),
+            'latestBlogs' => Blog::latest()->take(6)->get(),
         ]);
     }
 

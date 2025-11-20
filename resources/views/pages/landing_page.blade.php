@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BEM FH UNSIKA</title>
+    <title>{{ $siteProfile->name }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="icon" href="{{ asset('storage/' . $siteProfile->logo) }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -43,10 +43,10 @@
                     <p class="text-red-800 font-semibold mb-2">Tentang Kami</p>
                     <h2 class="text-4xl font-bold mb-6">BEM KM Fakultas Hukum UNSIKA</h2>
                     <p class="text-gray-600 leading-relaxed mb-4">
-                        Badan Eksekutif Mahasiswa Keluarga Mahasiswa Fakultas Hukum Universitas Singaperbangsa Karawang (BEM-KM FH Unsika) merupakan organisasi mahasiswa yang berperan sebagai wadah aspirasi, penggerak perjuangan, serta sarana pengembangan diri bagi seluruh mahasiswa Fakultas Hukum. Dengan semangat kebersamaan dan profesionalitas, BEM-KM FH Unsika hadir untuk memperjuangkan keadilan yang inklusif serta kesejahteraan mahasiswa dalam ranah akademik maupun nonakademik. Kami berkomitmen untuk mewujudkan lingkungan yang progresif, adaptif, dan berorientasi pada kemajuan bersama seluruh elemen mahasiswa.
+                        
                     </p>
                     <p class="text-gray-600 leading-relaxed">
-                        Dalam menjalankan perannya, BEM-KM FH Unsika berlandaskan visi untuk menjadi organisasi yang unggul dalam memperjuangkan keadilan inklusif demi kesejahteraan dan pengembangan mahasiswa. Misi kami mencakup pembangunan internal yang berdaya saing, komunikasi yang efektif, peran aktif dalam isu sosial politik, serta kolaborasi lintas bidang dan lembaga. Melalui berbagai program kerja dan kegiatan kolaboratif, kami berupaya menciptakan budaya kesejahteraan yang merata dan lingkungan kampus yang harmonis, tanpa memandang latar belakang atau kepentingan apa pun.
+                        {{ $siteProfile->about }}
                     </p>
                 </div>
             </div>
@@ -59,46 +59,12 @@
             <div class="grid md:grid-cols-2 gap-16">
                 <div class="flex flex-col items-center">
                     <h2 class="text-3xl font-bold text-red-800 mb-8 text-center">Visi</h2>
-                    <ol class="space-y-4">
-                        <li class="flex">
-                            <span class="font-bold mr-3">1.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                        <li class="flex">
-                            <span class="font-bold mr-3">2.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                        <li class="flex">
-                            <span class="font-bold mr-3">3.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                        <li class="flex">
-                            <span class="font-bold mr-3">4.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                    </ol>
+                    {{ $siteProfile->vision }}
                 </div>
                 
                 <div class="flex flex-col items-center">
                     <h2 class="text-3xl font-bold text-red-800 mb-8 text-center">Misi</h2>
-                    <ol class="space-y-4">
-                        <li class="flex">
-                            <span class="font-bold mr-3">1.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                        <li class="flex">
-                            <span class="font-bold mr-3">2.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                        <li class="flex">
-                            <span class="font-bold mr-3">3.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                        <li class="flex">
-                            <span class="font-bold mr-3">4.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                    </ol>
+                    {{ $siteProfile->mission }}
                 </div>
             </div>
         </div>
@@ -260,6 +226,94 @@
 
 
     <!-- Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slider = document.getElementById('slider');
+        if (!slider) return;
+        const container = slider.parentElement;
+        let index = 0;
+
+        function update() {
+            const first = slider.querySelector('a');
+            if (!first) return;
+            const style = getComputedStyle(slider);
+            const gap = parseFloat(style.gap) || 24;
+            const cardWidth = Math.round(first.getBoundingClientRect().width);
+            const visible = Math.max(1, Math.floor(container.getBoundingClientRect().width / (cardWidth + gap)));
+            const maxIndex = Math.max(0, slider.children.length - visible);
+
+            if (index < 0) index = 0;
+            if (index > maxIndex) index = maxIndex;
+
+            const translate = -(cardWidth + gap) * index;
+            slider.style.transform = 'translateX(' + translate + 'px)';
+        }
+
+        window.addEventListener('resize', update);
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                index--;
+                update();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                index++;
+                update();
+            });
+        }
+
+        // Basic touch dragging support
+        let startX = 0;
+        let isDragging = false;
+        let currentTranslate = 0;
+
+        slider.addEventListener('touchstart', function (e) {
+            const t = e.touches[0];
+            startX = t.clientX;
+            isDragging = true;
+            // temporarily disable transition while dragging
+            slider.style.transition = 'none';
+            // compute current translate from style
+            const m = slider.style.transform.match(/translateX\((-?\d+)px\)/);
+            currentTranslate = m ? parseInt(m[1], 10) : 0;
+        }, { passive: true });
+
+        slider.addEventListener('touchmove', function (e) {
+            if (!isDragging) return;
+            const t = e.touches[0];
+            const dx = t.clientX - startX;
+            slider.style.transform = 'translateX(' + (currentTranslate + dx) + 'px)';
+        }, { passive: true });
+
+        slider.addEventListener('touchend', function (e) {
+            if (!isDragging) return;
+            isDragging = false;
+            slider.style.transition = '';
+            const endX = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientX : startX;
+            const dx = endX - startX;
+            const first = slider.querySelector('a');
+            const cardWidth = first ? first.getBoundingClientRect().width : 300;
+            const threshold = cardWidth / 4;
+
+            if (dx < -threshold) {
+                index++;
+            } else if (dx > threshold) {
+                index--;
+            }
+            update();
+        });
+
+        // initialize
+        update();
+    });
+    </script>
   
 </x-guest.layout>
 </body>

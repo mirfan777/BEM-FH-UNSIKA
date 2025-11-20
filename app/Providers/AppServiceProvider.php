@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Settings\SiteProfile;
 
+// 
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -11,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        
     }
 
     /**
@@ -19,6 +21,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Share site profile data globally
+        view()->composer('*', function ($view) {
+            $view->with('siteProfile', app(SiteProfile::class));
+        });
     }
 }

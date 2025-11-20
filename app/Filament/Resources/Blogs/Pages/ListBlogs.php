@@ -22,22 +22,6 @@ class ListBlogs extends ListRecords
         ];
     }
 
-    public function getTabs(): array
-    {
-        return [
-            'all' => Tab::make('All Posts')
-                ->badge(fn () => $this->getModel()::count()),
-                
-            'my_posts' => Tab::make('My Posts')
-                ->modifyQueryUsing(fn (Builder $query) => $query->where('author_id', auth()->id()))
-                ->badge(fn () => $this->getModel()::where('author_id', auth()->id())->count()),
-                
-            'recent' => Tab::make('Recent')
-                ->modifyQueryUsing(fn (Builder $query) => $query->where('created_at', '>=', now()->subWeek()))
-                ->badge(fn () => $this->getModel()::where('created_at', '>=', now()->subWeek())->count()),
-        ];
-    }
-
     protected function getTableRecordsPerPageSelectOptions(): array
     {
         return [10, 25, 50, 100];

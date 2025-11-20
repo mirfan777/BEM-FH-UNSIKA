@@ -11,3 +11,4 @@ Route::post('form/store', LandingController::class . '@store')->name('submit.for
 Route::get('/kegiatan', KegiatanController::class . '@index');
 Route::get('/kegiatan/{slug}', KegiatanController::class . '@show')->name('blog.show');
 Route::get('/struktur/{slug}', [StructureController::class, 'show'])->name('struktur.show');
+

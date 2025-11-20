@@ -49,6 +49,40 @@ class ManageSiteProfile extends SettingsPage
                             ->helperText('Format: PNG, JPG, JPEG, GIF. Maksimal 2MB')
                             ->columnSpanFull(),
 
+                        TextInput::make('name')
+                            ->label('Nama Situs')
+                            ->placeholder('Nama Website')
+                            ->maxLength(255)
+                            ->columnSpanFull(),
+
+                        Textarea::make('description')
+                            ->label('Deskripsi')
+                            ->rows(4)
+                            ->maxLength(2000)
+                            ->placeholder('Deskripsi singkat tentang situs Anda')
+                            ->columnSpanFull(),
+
+                        Textarea::make('about')
+                            ->label('Tentang Kami')
+                            ->rows(4)
+                            ->maxLength(2000)
+                            ->placeholder('Deskripsi singkat tentang organisasi Anda')
+                            ->columnSpanFull(),
+
+                        Textarea::make('vision')
+                            ->label('Visi')
+                            ->rows(2)
+                            ->maxLength(500)
+                            ->placeholder('Visi instansi')
+                            ->columnSpanFull(),
+
+                        Textarea::make('mission')
+                            ->label('Misi')
+                            ->rows(3)
+                            ->maxLength(1000)
+                            ->placeholder('Misi instansi')
+                            ->columnSpanFull(),
+
                         Textarea::make('alamat')
                             ->label('Alamat Lengkap')
                             ->rows(3)
@@ -78,6 +112,14 @@ class ManageSiteProfile extends SettingsPage
                             ->placeholder('https://facebook.com/username')
                             ->prefix('https://')
                             ->helperText('URL lengkap halaman Facebook')
+                            ->columnSpanFull(),
+                            
+                        TextInput::make('twitter')
+                            ->label('Twitter')
+                            ->url()
+                            ->placeholder('https://twitter.com/username')
+                            ->prefix('https://')
+                            ->helperText('URL lengkap halaman Twitter')
                             ->columnSpanFull(),
                         
                         TextInput::make('instagram')
@@ -146,8 +188,11 @@ class ManageSiteProfile extends SettingsPage
                 ->action(function () {
                     $this->form->fill([
                         'logo' => '',
+                        'name' => '',
                         'visi' => '',
                         'misi' => '',
+                        'vision' => '',
+                        'mission' => '',
                         'alamat' => '',
                         'whatsapp' => '',
                         'lokasi_gmaps' => '',

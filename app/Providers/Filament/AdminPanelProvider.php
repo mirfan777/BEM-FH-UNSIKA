@@ -34,6 +34,10 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->passwordReset()
+            ->profile()
+            ->brandLogo(fn () => view('components.logo'))
+            ->favicon(asset('storage/' . app(\App\Settings\SiteProfile::class)->logo))
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -97,6 +101,11 @@ class AdminPanelProvider extends PanelProvider
                                 ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.pages.manage-site-profile'))
                                 ->icon('heroicon-o-cog-6-tooth')
                                 ->url(fn (): string => \App\Filament\Pages\ManageSiteProfile::getUrl()),
+                                NavigationItem::make('Account')
+                                    ->label('Akun Saya')
+                                    ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.pages.account'))
+                                    ->icon('heroicon-o-user-circle')
+                                    ->url("/admin/profile"),
                             ]),
                         ]);
             
