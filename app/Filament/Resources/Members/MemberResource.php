@@ -71,7 +71,8 @@ class MemberResource extends Resource
                     ->visibility('public')
                     ->maxSize(2048)
                     ->acceptedFileTypes(['image/png', 'image/jpg', 'image/jpeg', 'image/gif'])
-                    ->helperText('Format: PNG, JPG, JPEG, GIF. Maksimal 2MB'),
+                    ->helperText('Format: PNG, JPG, JPEG, GIF. Maksimal 2MB')
+                    ->required()
             ]);
     }
 
