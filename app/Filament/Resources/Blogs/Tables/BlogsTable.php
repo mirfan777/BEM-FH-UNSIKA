@@ -18,12 +18,6 @@ class BlogsTable
     {
         return $table
             ->columns([
-                ImageColumn::make('thumbnail')
-                    ->label('Thumbnail')
-                    ->square()
-                    ->size(60)
-                    ->defaultImageUrl('/images/placeholder.jpg'),
-                    
                 TextColumn::make('title')
                     ->label('Title')
                     ->searchable()

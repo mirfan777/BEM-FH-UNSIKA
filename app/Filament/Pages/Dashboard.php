@@ -11,7 +11,6 @@ class Dashboard extends BaseDashboard
     protected function getHeaderWidgets(): array
     {
         return [
-            \App\Filament\Widgets\VisitorStatsWidget::class,
             \App\Filament\Widgets\ContactFormSubmission::class,
         ];
     }
