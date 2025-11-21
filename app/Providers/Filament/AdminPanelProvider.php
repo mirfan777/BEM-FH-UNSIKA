@@ -34,6 +34,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->brandName('BEM FH Unsika - Pragya Dharma')
             ->colors([
                 'primary' => Color::Amber,
             ])

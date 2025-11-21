@@ -7,17 +7,25 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="icon" href="{{ asset('storage/' . $siteProfile->logo) }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <!-- AOS CSS -->
+    <link href="{{ asset('aos/aos.css') }}" rel="stylesheet">
 </head>
 <body class="font-sans bg-white">
     <!-- Navbar -->
     <x-guest.layout>
     <!-- Page Header -->
-    <section class="pt-32 pb-12 bg-white">
-        <div class="mx-auto px-6" style="padding-left: 100px; padding-right: 100px;">
-            <h1 class="text-4xl font-bold mb-6">Kegiatan BEM KM FH UNSIKA</h1>
+    <main class="max-w-7xl mx-4 sm:mx-8 lg:mx-20 my-20 px-6 sm:px-8 lg:px-12 py-8 sm:py-12">
+    <section class="bg-white">
+        <div class="mx-auto">
+            <p class="text-red-800 font-semibold mb-10" data-aos="fade-down">
+                Publikasi > Kajian
+            </p>
+            <h1 class="text-4xl font-bold mb-6" data-aos="fade-up" data-aos-delay="100">
+                Kajian Aksi dan Strategi BEM-KM FH Unsika
+            </h1>
             
             <!-- Search and Filter -->
-            <div class="flex items-center gap-4 mb-8">
+            <div class="flex items-center gap-4 mb-8" data-aos="fade-up" data-aos-delay="200">
                 <div class="flex-1 relative">
                     <svg class="w-5 h-5 absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -40,29 +48,74 @@
 
     <!-- Activities Grid -->
     <section class="pb-24 bg-white">
-        <div class="mx-auto px-6" style="padding-left: 100px; padding-right: 100px;">
-            <div id="activitiesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="mx-auto">
+            <div id="activitiesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
                 
-                @foreach($kegiatan as $kegiatan)
-                <a href="{{ route('blog.show', $kegiatan->slug) }}" class="card bg-white rounded-lg overflow-hidden shadow-lg activity-card" data-title="lorem ipsum dolor">
-                    <img src="/storage/{{ $kegiatan->thumbnail }}" alt="Activity" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-3">{{ $kegiatan->title }}</h3>
-                        <p class="text-gray-600 text-sm mb-4">
-                            {{ $kegiatan->description }}
-                        </p>
-                        <p class="text-gray-400 text-sm">{{ $kegiatan->created_at->format('d/m/Y') }}</p>
-                    </div>
-                </a>
+                @foreach($kegiatan as $index => $item)
+                <div class="w-full" 
+                     data-aos="fade-up"
+                     data-aos-delay="{{ $index * 100 }}"
+                     data-aos-duration="800">
+                    <a href="{{ route('blog.show', $item->slug) }}" 
+                       class="card block bg-white rounded-lg overflow-hidden shadow-lg activity-card 
+                              hover:shadow-2xl transition-all duration-500 ease-out
+                              group" 
+                       data-title="{{ $item->title }}">
+                        <div class="overflow-hidden rounded-t-lg">
+                            <img src="/storage/{{ $item->thumbnail }}" 
+                                 alt="{{ $item->title }}" 
+                                 class="w-full h-48 object-cover transition-transform duration-500 ease-out 
+                                        group-hover:scale-110">
+                        </div>
+                        <div class="p-6 bg-white rounded-b-lg">
+                            <h3 class="font-bold text-xl mb-3 transition-colors duration-300 
+                                       group-hover:text-red-800">{{ $item->title }}</h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                {{ $item->description }}
+                            </p>
+                            <p class="text-gray-400 text-sm">{{ $item->created_at->format('d/m/Y') }}</p>
+                        </div>
+                    </a>
+                </div>
                 @endforeach
-
-
 
             </div>
         </div>
     </section>
-
+    </main>
+    
+    <!-- AOS JS -->
+    <script src="{{ asset('aos/aos.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100,
+            delay: 100,
+        });
+    </script>
+    
+    <!-- Custom CSS for smooth hover -->
+    <style>
+        .card {
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        
+        .card:hover {
+            transform: scale(1.03) translateY(-8px);
+        }
+        
+        .card img {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
     </x-guest.layout>
 </body>
 </html>

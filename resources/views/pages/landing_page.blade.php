@@ -6,6 +6,7 @@
     <title>BEM FH UNSIKA</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="icon" href="{{ asset('storage/' . $siteProfile->logo) }}" type="image/x-icon">
+    <link href="{{ asset('aos/aos.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body class="font-sans">
@@ -16,7 +17,7 @@
     <!-- Hero Section -->
     <section class="hero-section flex items-center mt-16" style="min-height: 600px;">
         <div class="w-full px-6 lg:px-24">
-            <div class="max-w-2xl">
+            <div class="max-w-2xl" data-aos="fade-up">
                 <h1 class="text-5xl font-bold text-white mb-4">BEM-KM FH UNSIKA</h1>
                 <p class="text-white text-lg mb-8">Mengabdi, berinovasi, dan berkontribusi demi kemajuan Fakultas Hukum Unsika.</p>
                 <div class="flex gap-4">
@@ -33,13 +34,13 @@
 
     <!-- About Section -->
     <section class="py-24 bg-white" id="tentang">
-        <div class="mx-auto md:px-40 px-6">
+        <div class="mx-auto md:px-20 px-6" >
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="relative">
+                <div class="relative" data-aos="fade-right">
                     <img src="{{ asset('images/landing_image.png') }}" alt="Students" class="rounded-3xl">
                 </div>
                 
-                <div>
+                <div data-aos="fade-left">
                     <p class="text-red-800 font-semibold mb-2">Tentang Kami</p>
                     <h2 class="text-4xl font-bold mb-6">BEM KM Fakultas Hukum UNSIKA</h2>
                     <p class="text-gray-600 leading-relaxed mb-4">
@@ -52,79 +53,28 @@
             </div>
         </div>
     </section>
-
-    <!-- Visi Misi Section -->
-    <section class="py-24 bg-gray-50" id="visi-misi">
-        <div class="mx-auto md:px-40 px-6" >
-            <div class="grid md:grid-cols-2 gap-16">
-                <div class="flex flex-col items-center">
-                    <h2 class="text-3xl font-bold text-red-800 mb-8 text-center">Visi</h2>
-                    <ol class="space-y-4">
-                        <li class="flex">
-                            <span class="font-bold mr-3">1.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                        <li class="flex">
-                            <span class="font-bold mr-3">2.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                        <li class="flex">
-                            <span class="font-bold mr-3">3.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                        <li class="flex">
-                            <span class="font-bold mr-3">4.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                    </ol>
-                </div>
-                
-                <div class="flex flex-col items-center">
-                    <h2 class="text-3xl font-bold text-red-800 mb-8 text-center">Misi</h2>
-                    <ol class="space-y-4">
-                        <li class="flex">
-                            <span class="font-bold mr-3">1.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                        <li class="flex">
-                            <span class="font-bold mr-3">2.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                        <li class="flex">
-                            <span class="font-bold mr-3">3.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                        <li class="flex">
-                            <span class="font-bold mr-3">4.</span>
-                            <span class="text-gray-700">Lorem ipsum dolor sit amet dolor sit</span>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
 
         <!-- Activities Section -->
     <section class="py-24 bg-white" id="kegiatan">
-        <div class="mx-auto md:px-40 px-6">
+        <div class="mx-auto md:px-20 px-6">
             <div class="grid md:grid-cols-2 gap-8 items-start mb-12">
-                <div>
+                <div data-aos="fade-up">
                     <p class="text-red-800 font-semibold mb-2">Publikasi</p>
                     <h2 class="text-4xl font-bold">Kajian Aksi dan Strategi BEM-KM FH Unsika</h2>
                 </div>
                 <div>
-                    <p class="text-gray-600 mb-6">
+                    <p class="text-gray-600 mb-6" data-aos="fade-up" data-aos-delay="100">
                        Temukan berbagai publikasi berisi gagasan, hasil riset, dan analisis kritis BEM-KM FH Unsika terhadap isu-isu hukum, sosial, dan kemahasiswaan!
                     </p>
                     <a href="{{ url('/kegiatan') }}" >
-                    <button class="text-red-900 border-2 border-red-900 px-6 py-2 rounded hover:bg-red-900 hover:text-white transition">
+                    <button class="text-red-900 border-2 border-red-900 px-6 py-2 rounded hover:bg-red-900 hover:text-white transition" data-aos="fade-up" data-aos-delay="200">
                         <b>Lebih Banyak</b>
                     </button></a>
                 </div>
             </div>
             
-            <div class="relative">
+            <div class="relative" data-aos="fade-up" data-aos-delay="200">
                 <!-- Navigation Buttons -->
                 <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,9 +90,9 @@
                 
                 <!-- Slider Container -->
                 <div class="overflow-hidden pb-8">
-                    <div id="slider" class="flex gap-6 transition-transform duration-500 ease-out">
+                    <div id="slider" class="flex gap-6 transition-transform duration-500 ease-out" style="margin: 10px;">
                         @foreach($latestBlogs as $blog)
-                        <a href="{{ route('blog.show', $blog->slug) }}" class="min-w-[300px] max-w-[300px] bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <a href="{{ route('blog.show', $blog->slug) }}" class="min-w-[300px] max-w-[300px] bg-white rounded-lg overflow-hidden shadow-lg duration-300 hover:scale-105 transition-all">
                             <img src="/storage/{{ $blog->thumbnail }}" alt="Activity" class="w-full h-48 object-cover">
                             <div class="p-6">
                                 <h3 class="font-bold text-xl mb-3">{{ $blog->title }}</h3>
@@ -161,9 +111,9 @@
 
         <!-- Contact Section -->
     <section class="py-24 bg-gray-50" id="kontak" style="margin-bottom: 80px">
-        <div class="mx-auto md:px-40 px-6" >
+        <div class="mx-auto md:px-20 px-6" >
             <div class="grid md:grid-cols-2 gap-16">
-                <div>
+                <div data-aos="fade-right">
                     <p class="text-red-800 font-semibold mb-2">Hubungi Kami</p>
                     <h2 class="text-4xl font-bold mb-6">Kirimkan pesan Anda melalui formulir ini!</h2>
                     <p class="text-gray-600 leading-relaxed">
@@ -171,7 +121,7 @@
                     </p>
                 </div>
                 
-                <div>
+                <div data-aos="fade-left">
                     <form id="contactForm" action="{{ route('submit.form') }}" method="POST" class="space-y-6">
                         @csrf
                         <div>
@@ -246,9 +196,9 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">data berhasil</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Pesan Berhasil Dikirim</h3>
                 <p class="text-gray-600 mb-6">Terima kasih telah menghubungi kami. Kami akan segera merespon pesan Anda.</p>
-                <button data-modal-hide="notification-modal" type="button" class="btn-primary text-white px-6 py-3 rounded font-medium w-full">
+                <button data-modal-hide="notification-modal" type="button" class="btn-primary text-red-900 px-6 py-3 rounded font-medium w-full hover:text-white transition">
                     Tutup
                 </button>
             </div>
@@ -257,9 +207,17 @@
 </div>
 @endif
 
-
-
-    <!-- Script -->
+    <!-- AOS JS Local -->
+    <script src="{{ asset('aos/aos.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100,
+        });
+    </script>
   
 </x-guest.layout>
 </body>

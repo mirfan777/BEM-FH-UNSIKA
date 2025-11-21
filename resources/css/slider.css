@@ -1,0 +1,56 @@
+/* Swiper Pengurus Styling */
+.mySwiper .swiper-slide {
+    width: 280px;
+    height: auto;
+    transform: scale(0.85);
+    opacity: 0.6;
+    transition: all 0.5s ease;
+    transition: opacity .3s;
+}
+
+.mySwiper {
+    overflow: hidden !important;
+}
+
+.mySwiper .swiper-slide-active {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 10;
+}
+
+.mySwiper .swiper-slide-active .member-info {
+    opacity: 1 !important;
+}
+
+/* Pagination styling */
+.mySwiper .swiper-pagination-bullet {
+    background: #991b1b;
+    opacity: 0.3;
+    width: 10px;
+    height: 10px;
+    transition: all 0.3s ease;
+}
+
+.mySwiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 24px;
+    border-radius: 5px;
+}
+
+/* Navigation buttons */
+.swiper-button-prev,
+.swiper-button-next {
+    z-index: 20;
+    font-size: 0 !important;
+
+}
+
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    transform: scale(1.1);
+}
+
+.swiper-wrapper {
+    align-items: center;
+}

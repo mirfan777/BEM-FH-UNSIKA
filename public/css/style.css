@@ -88,6 +88,25 @@ html {
     background-color: #f3f4f6;
 }
 
+/* slider struktur */
+.mySwiper .swiper-slide {
+    opacity: 0.5;
+    transform: scale(0.8);
+    transition: all 0.4s ease;
+}
+
+.mySwiper .swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.mySwiper .swiper-slide-next,
+.mySwiper .swiper-slide-prev {
+    opacity: 0.7;
+    transform: scale(0.9);
+}
+
+
 /* Modal & Checkmark Animations */
 .modal-overlay { animation: fadeIn 0.3s ease-out; }
 .modal-overlay.closing { animation: fadeOut 0.3s ease-out; }
