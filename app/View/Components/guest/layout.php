@@ -10,22 +10,17 @@ use App\Models\Division;
 
 class layout extends Component
 {
-    /**
-     * Create a new component instance.
-     */
+    public $siteProfile;
+    public $divisions;
+
     public function __construct()
     {
-        
+        $this->siteProfile = app(SiteProfile::class);
+        $this->divisions = Division::all();
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     */
     public function render(): View|Closure|string
     {
-        return view('components.guest.layout' , [
-            'siteProfile' => app(SiteProfile::class),
-            'divisions' => Division::get()
-        ]);
+        return view('components.guest.layout');
     }
 }
