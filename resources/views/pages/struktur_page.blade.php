@@ -89,77 +89,24 @@
                     <div class="swiper-button-prev !text-black !w-14 !h-14 
                                     after:!text-base !-left-2 md:!-left-6 
                                     bg-white rounded-full shadow-lg 
-                                    hover:bg-red-800 hover:!text-white transition-all duration-300
+                                    hover:bg-red-800 hover:!text-white transition-bg duration-300
                                     !p-4 flex items-center justify-center"
-                         data-aos="fade-right" data-aos-delay="300">
+                            style="transition: all 0.3s ease-in-out;"
+                            data-aos="fade-right" data-aos-delay="300">
                     </div>
                     <div class="swiper-button-next !text-black !w-14 !h-14 
                                     after:!text-base !-right-2 md:!-right-6 
                                     bg-white rounded-full shadow-lg 
-                                    hover:bg-red-800 hover:!text-white transition-all duration-300
+                                    hover:bg-red-800 hover:!text-white transition-bg duration-300
                                     !p-4 flex items-center justify-center"
-                         data-aos="fade-left" data-aos-delay="300">
+                            style="transition: all 0.3s ease-in-out;"
+                            data-aos="fade-left" data-aos-delay="300">
                     </div>
                 </div>
             </section>
 
 
-            <!-- Staff Section -->
-             <section class="mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">
-                    Staff
-                </h2>
-
-                <!-- Staff Grid -->
-                @if($members->where('position', 'staff')->count() > 0)
-                <div class="grid gap-8 justify-items-center grid-cols-[repeat(auto-fit,minmax(250px,1fr))] p-4">
-                    @foreach($members->where('position', 'staff') as $index => $member)
-                    <div class="group max-w-[300px] w-full bg-white rounded-2xl shadow-md 
-                                transition-all duration-500 ease-out
-                                hover:shadow-2xl hover:scale-105 hover:-translate-y-2
-                                cursor-pointer" 
-                         data-aos="fade-up" data-aos-delay="{{ $index * 100 }}">
-
-                        <!-- Image Container with Overflow Hidden -->
-                        <div class="relative overflow-hidden rounded-t-2xl">
-                            <img 
-                                src="{{ asset('storage/' . $member->photo) }}"
-                                alt="{{ $member->name }}" 
-                                class="w-full h-80 object-cover 
-                                       transition-transform duration-700 ease-out
-                                       group-hover:scale-110"
-                            >
-                            <!-- Optional: Overlay on Hover -->
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 
-                                        transition-all duration-500"></div>
-                        </div>
-
-                        <!-- Info Container -->
-                        <div class="p-4 text-center">
-                            <h3 class="text-lg font-bold text-gray-900 mb-1 
-                                       transition-colors duration-300
-                                       group-hover:text-red-800">
-                                {{ $member->name }}
-                            </h3>
-                            <p class="text-sm text-gray-600 transition-colors duration-300">
-                                {{ $member->position_name }}
-                            </p>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-                @else
-                <!-- Empty State -->
-                <div class="text-center py-12" data-aos="fade-up" data-aos-delay="200">
-                    <svg class="mx-auto h-16 w-16 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    <p class="text-gray-500 text-lg font-medium">Belum ada data staff</p>
-                    <p class="text-gray-400 text-sm mt-2">Data staff akan ditampilkan di sini</p>
-                </div>
-                @endif
-            </section>
+            
         </main>
     </x-guest.layout>
     

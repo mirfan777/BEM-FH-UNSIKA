@@ -35,7 +35,7 @@
 
         <!-- Misi Section -->
         <section class="mb-10 sm:mb-16" data-aos="fade-up" data-aos-delay="200">
-            <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 lg:p-10">
+            <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 lg:p-10 border-l-4 border-red-700">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Misi</h2>
                 <div class="space-y-4 sm:space-y-5">
                     <div class="flex gap-3 sm:gap-4" data-aos="fade-right" data-aos-delay="300">
@@ -92,7 +92,7 @@
 
         <!-- Tujuan Section -->
         <section class="mb-10 sm:mb-16" data-aos="fade-up" data-aos-delay="600">
-            <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 lg:p-10">
+            <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 lg:p-10 border-l-4 border-red-700">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Tujuan</h2>
                 <div class="space-y-4 sm:space-y-5">
                     <div class="flex gap-3 sm:gap-4" data-aos="fade-left" data-aos-delay="650">

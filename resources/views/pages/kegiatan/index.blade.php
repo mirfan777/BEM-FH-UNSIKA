@@ -33,7 +33,7 @@
                     <input 
                         type="text" 
                         id="searchInput"
-                        placeholder="Cari kegiatan disini..." 
+                        placeholder="Cari kajian yang ingin Anda lihat di sini…" 
                         class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg search-input"
                     >
                 </div>

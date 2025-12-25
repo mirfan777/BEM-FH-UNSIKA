@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEM FH UNSIKA</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="icon" href="{{ asset('storage/' . $siteProfile->logo) }}" type="image/x-icon">
     <link href="{{ asset('aos/aos.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
@@ -42,9 +41,9 @@
                 
                 <div data-aos="fade-left">
                     <p class="text-red-800 font-semibold mb-2">Tentang Kami</p>
-                    <h2 class="text-4xl font-bold mb-6">BEM KM Fakultas Hukum UNSIKA</h2>
+                    <h2 class="text-4xl font-bold mb-6">BEM-KM FH UNSIKA</h2>
                     <p class="text-gray-600 leading-relaxed mb-4">
-                        Badan Eksekutif Mahasiswa Keluarga Mahasiswa Fakultas Hukum Universitas Singaperbangsa Karawang (BEM-KM FH Unsika) merupakan organisasi mahasiswa yang berperan sebagai wadah aspirasi, penggerak perjuangan, serta sarana pengembangan diri bagi seluruh mahasiswa Fakultas Hukum. Dengan semangat kebersamaan dan profesionalitas, BEM-KM FH Unsika hadir untuk memperjuangkan keadilan yang inklusif serta kesejahteraan mahasiswa dalam ranah akademik maupun nonakademik. Kami berkomitmen untuk mewujudkan lingkungan yang progresif, adaptif, dan berorientasi pada kemajuan bersama seluruh elemen mahasiswa.
+                        Badan Eksekutif Mahasiswa - Keluarga Mahasiswa Fakultas Hukum Universitas Singaperbangsa Karawang (BEM-KM FH Unsika) merupakan organisasi mahasiswa yang berperan sebagai wadah aspirasi, penggerak perjuangan, serta sarana pengembangan diri bagi seluruh mahasiswa Fakultas Hukum. Dengan semangat kebersamaan dan profesionalitas, BEM-KM FH Unsika hadir untuk memperjuangkan keadilan yang inklusif serta kesejahteraan mahasiswa dalam ranah akademik maupun nonakademik. Kami berkomitmen untuk mewujudkan lingkungan yang progresif, adaptif, dan berorientasi pada kemajuan bersama seluruh elemen mahasiswa.
                     </p>
                     <p class="text-gray-600 leading-relaxed">
                         Dalam menjalankan perannya, BEM-KM FH Unsika berlandaskan visi untuk menjadi organisasi yang unggul dalam memperjuangkan keadilan inklusif demi kesejahteraan dan pengembangan mahasiswa. Misi kami mencakup pembangunan internal yang berdaya saing, komunikasi yang efektif, peran aktif dalam isu sosial politik, serta kolaborasi lintas bidang dan lembaga. Melalui berbagai program kerja dan kegiatan kolaboratif, kami berupaya menciptakan budaya kesejahteraan yang merata dan lingkungan kampus yang harmonis, tanpa memandang latar belakang atau kepentingan apa pun.
@@ -68,22 +67,22 @@
                        Temukan berbagai publikasi berisi gagasan, hasil riset, dan analisis kritis BEM-KM FH Unsika terhadap isu-isu hukum, sosial, dan kemahasiswaan!
                     </p>
                     <a href="{{ url('/kegiatan') }}" >
-                    <button class="text-red-900 border-2 border-red-900 px-6 py-2 rounded hover:bg-red-900 hover:text-white transition" data-aos="fade-up" data-aos-delay="200">
-                        <b>Lebih Banyak</b>
+                    <button class="text-red-900 border-2 border-red-900 px-6 py-2 rounded hover:bg-red-900 hover:text-white" data-aos="fade-up" data-aos-delay="200" style="transition: all 0.3s ease-in-out;">
+                        Lebih Banyak
                     </button></a>
                 </div>
             </div>
             
             <div class="relative" data-aos="fade-up" data-aos-delay="200">
                 <!-- Navigation Buttons -->
-                <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition">
+                <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-red-800 transition hover:text-white">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
                 </button>
                 
-                <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-red-800 transition hover:text-white">
+                    <svg class="w-6 h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </button>
@@ -126,17 +125,17 @@
                         @csrf
                         <div>
                             <label class="block text-sm font-semibold mb-2">Nama</label>
-                            <input type="text" id="nama" name="name" placeholder="Nama lengkap anda" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800">
+                            <input type="text" id="nama" name="name" placeholder="Masukkan nama Anda..." required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800">
                         </div>
                         
                         <div>
                             <label class="block text-sm font-semibold mb-2">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Email anda" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800">
+                            <input type="email" id="email" name="email" placeholder="Masukkan e-mail Anda…" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800">
                         </div>
                         
                         <div>
                             <label class="block text-sm font-semibold mb-2">Pesan</label>
-                            <textarea id="pesan" name="message" rows="5" placeholder="Tulis pesan anda" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800" maxlength="500"></textarea>
+                            <textarea id="pesan" name="message" rows="5" placeholder="Masukkan pesan Anda..." required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-red-800" maxlength="500"></textarea>
                         </div>
                         
                         <button type="submit" class="btn-pesan text-white px-8 py-3 rounded font-medium w-full bg-red-900 hover:bg-red-800 transition">
