@@ -50,7 +50,7 @@
             <p class="text-gray-600" 
                data-aos="fade-up" 
                data-aos-delay="200">
-                {{ $kegiatan->start_at }}
+                {{ \Carbon\Carbon::parse($kegiatan->start_at)->format('d F Y') }}
             </p>
             
             <!-- Thumbnail Image -->
