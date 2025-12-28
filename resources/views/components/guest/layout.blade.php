@@ -175,7 +175,7 @@
             <!-- Profil -->
             <div>
                 <div class="flex items-center space-x-3 mb-4">
-                    <div class="w-10 h-10 bg-gray-600 rounded-full"></div>
+                     <img src="/storage/{{ $siteProfile->logo }}" class="h-8 mr-3" alt="Logo" />
                     <span class="font-semibold">BEM-KM FH UNSIKA</span>
                 </div>
                 <p class="text-white text-sm leading-relaxed">
@@ -197,6 +197,7 @@
             <!-- Alamat -->
             <div>
                 <h3 class="font-bold mb-4">Alamat</h3>
+                <h4 class="text-white text-sm"> Sekretariat BEM-KM FH Unsika </h4>
                 <p class="text-white text-sm leading-relaxed">
                     {{ $siteProfile->alamat }}
                 </p>
@@ -212,9 +213,9 @@
                                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
                             </svg>
                         </div>
-                        <div class="text-sm">
-                            {{ $siteProfile->whatsapp }}
-                        </div>
+                        <a href="https://wa.me/62{{ $siteProfile->whatsapp }}" class="text-sm" target="_blank" rel="noopener noreferrer">
+                            (+62) {{ $siteProfile->whatsapp }} (Advocare)
+                        </a>
                     </div>
 
                     <div class="flex items-center space-x-3">
