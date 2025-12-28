@@ -29,12 +29,28 @@
                 data-aos-delay="100">
                 {{ $kegiatan->title }}
             </h1>
+
+            @if($kegiatan->department)
+                @if($kegiatan->department->field)
+                    <h2 class="text-xl text-gray-700"
+                        data-aos="fade-up" 
+                        data-aos-delay="150">
+                        {{ $kegiatan->department->field->name }}
+                    </h2>
+                @endif
+
+                <h3 class="text-base text-gray-700"
+                    data-aos="fade-up" 
+                    data-aos-delay="150">
+                    {{ $kegiatan->department->name }}
+                </h3>
+            @endif
             
             <!-- Date -->
             <p class="text-gray-600" 
                data-aos="fade-up" 
                data-aos-delay="200">
-                {{ $kegiatan->created_at->format('d/m/Y') }}
+                {{ $kegiatan->start_at }}
             </p>
             
             <!-- Thumbnail Image -->

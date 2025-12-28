@@ -7,7 +7,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use App\Settings\SiteProfile;
 use App\Models\Department;
-use App\Models\field;
+use App\Models\Field;
 
 class layout extends Component
 {

@@ -98,7 +98,7 @@
                                 <p class="text-gray-600 text-sm mb-4">
                                     {{ Str::limit($blog->description, 100) }}
                                 </p>
-                                <p class="text-gray-400 text-sm">{{ $blog->created_at->format('d/m/Y') }}</p>
+                                <p class="text-gray-400 text-sm">{{ $blog->start_at }}</p>
                             </div>
                         </a>
                         @endforeach

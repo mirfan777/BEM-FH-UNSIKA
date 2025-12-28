@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\Field;
 
 use App\Filament\Resources\Field\Pages\ManageFields;
-use App\Models\field;
+use App\Models\Field;
 use BackedEnum;
 use UnitEnum;
 use Filament\Actions\BulkActionGroup;

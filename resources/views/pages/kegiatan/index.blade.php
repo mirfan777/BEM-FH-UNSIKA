@@ -73,7 +73,7 @@
                             <p class="text-gray-600 text-sm mb-4">
                                 {{ $item->description }}
                             </p>
-                            <p class="text-gray-400 text-sm">{{ $item->created_at->format('d/m/Y') }}</p>
+                            <p class="text-gray-400 text-sm">{{ $item->start_at }}</p>
                         </div>
                     </a>
                 </div>
