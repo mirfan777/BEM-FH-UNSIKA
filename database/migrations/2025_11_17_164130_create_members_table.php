@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('position_name');
             $table->string('photo');
             $table->string('npm');
-            $table->unsignedBigInteger('division_id');
-            $table->foreign('division_id')->references('id')->on('divisions')->onDelete('cascade');
+            $table->unsignedBigInteger('department_id');
+            $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\Divisions\Pages;
+namespace App\Filament\Resources\Field\Pages;
 
-use App\Filament\Resources\Divisions\DivisionResource;
+use App\Filament\Resources\Field\FieldResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 
-class ManageDivisions extends ManageRecords
+class ManageFields extends ManageRecords
 {
-    protected static string $resource = DivisionResource::class;
+    protected static string $resource = FieldResource::class;
 
     protected function getHeaderActions(): array
     {

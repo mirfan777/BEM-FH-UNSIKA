@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\Divisions;
+namespace App\Filament\Resources\Department;
 
-use App\Filament\Resources\Divisions\Pages\ManageDivisions;
-use App\Models\Division;
+use App\Filament\Resources\Department\Pages\ManageDepartments;
+use App\Models\Department;
 use BackedEnum;
 use UnitEnum;
 use Filament\Actions\BulkActionGroup;
@@ -13,6 +13,7 @@ use Filament\Actions\EditAction;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -20,14 +21,14 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Table;
 
-class DivisionResource extends Resource
+class DepartmentResource extends Resource
 {
-    protected static ?string $model = Division::class;
+    protected static ?string $model = Department::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $navigationParentItem = 'StrukturOrganisasi';
-    protected static ?string $navigationLabel = 'Division';
+    protected static ?string $navigationLabel = 'Department';
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -39,6 +40,13 @@ class DivisionResource extends Resource
                     ->label('Name')
                     ->required()
                     ->maxLength(255),
+
+                Select::make('field_id')
+                    ->label('Bidang / Field')
+                    ->relationship('field', 'name')
+                    ->searchable()
+                    ->preload()
+                    ->nullable(),
 
                 Textarea::make('description')
                     ->label('Description')
@@ -95,7 +103,7 @@ class DivisionResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ManageDivisions::route('/'),
+            'index' => ManageDepartments::route('/'),
         ];
     }
 }

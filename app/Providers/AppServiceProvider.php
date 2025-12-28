@@ -21,7 +21,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-
+        view()->composer('*', function ($view) {
+            $siteProfile = app(SiteProfile::class);
+            $view->with('siteProfile', $siteProfile);
+        });
 
     }
 }

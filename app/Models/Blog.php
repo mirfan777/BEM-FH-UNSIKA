@@ -13,13 +13,20 @@ class Blog extends Model
         'thumbnail',
         'title',
         'slug',
+        'start_at',
         'description',
         'content',
         'author_id',
+        'department_id',
     ];
 
     public function author()
     {
         return $this->belongsTo(User::class, 'author_id');
+    }
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class, 'department_id');
     }
 }

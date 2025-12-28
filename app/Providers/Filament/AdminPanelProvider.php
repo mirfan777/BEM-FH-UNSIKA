@@ -8,7 +8,8 @@ use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages\Dashboard;
 use App\Filament\Resources\Blogs\BlogResource;
-use App\Filament\Resources\Divisions\DivisionResource;
+use App\Filament\Resources\Department\DepartmentResource;
+use App\Filament\Resources\Field\FieldResource;
 use App\Filament\Resources\Members\MemberResource;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -77,11 +78,16 @@ class AdminPanelProvider extends PanelProvider
                         NavigationGroup::make()
                             ->label('Struktur Organisasi')
                             ->items([
-                                NavigationItem::make('Division')
-                                    ->label('Division')
-                                    ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.resources.divisions.*'))
+                                NavigationItem::make('Field')
+                                    ->label('Bidang / Field')
+                                    ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.resources.fields.*'))
+                                    ->icon('heroicon-o-bookmark')
+                                    ->url(fn (): string => FieldResource::getUrl()),
+                                NavigationItem::make('Department')
+                                    ->label('Department')
+                                    ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.resources.departments.*'))
                                     ->icon('heroicon-o-building-office-2')
-                                    ->url(fn (): string => DivisionResource::getUrl()),
+                                    ->url(fn (): string => DepartmentResource::getUrl()),
                                 NavigationItem::make('Member')
                                     ->label('Member')
                                     ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.resources.members.*'))

@@ -19,14 +19,14 @@
 
             <!-- Title -->
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8" data-aos="fade-up">
-                {{ $division->name }}
+                {{ $department->name }}
             </h1>
 
             <!-- Hero Image -->
             <div class="w-full rounded-lg overflow-hidden mb-8 shadow-lg" data-aos="zoom-in">
                 <img 
-                    src="{{ asset('storage/' . $division->thumbnail) }}" 
-                    alt="{{ $division->name }}" 
+                    src="{{ asset('storage/' . $department->thumbnail) }}" 
+                    alt="{{ $department->name }}" 
                     class="w-full h-64 md:h-96 object-cover"
                 >
             </div>
@@ -34,7 +34,7 @@
             <!-- Description Text -->
             <div class="text-gray-600 leading-relaxed text-justify mb-16 space-y-4" data-aos="fade-up" data-aos-delay="100">
                 <p>
-                    {{ $division->description }}
+                    {{ $department->description }}
                 </p>
             </div>
 

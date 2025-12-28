@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('thumbnail')->nullable();
             $table->string('title');
             $table->string('slug')->unique();
+            $table->date('start_at');
+            $table->foreignId('department_id')->constrained('departments')->cascadeOnDelete();
             $table->text('description')->nullable();
             $table->longText('content')->nullable();
             $table->foreignId('author_id')->constrained('users')->cascadeOnDelete();

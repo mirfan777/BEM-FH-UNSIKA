@@ -58,6 +58,19 @@ class BlogsTable
                     ->badge()
                     ->color('success'),
                     
+                TextColumn::make('department.name')
+                    ->label('Department')
+                    ->searchable()
+                    ->sortable()
+                    ->badge()
+                    ->color('info'),
+                    
+                TextColumn::make('start_at')
+                    ->label('Start Date')
+                    ->date('M d, Y')
+                    ->sortable()
+                    ->toggleable(),
+                    
                 TextColumn::make('created_at')
                     ->label('Created')
                     ->dateTime('M d, Y H:i')

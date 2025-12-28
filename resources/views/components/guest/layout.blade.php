@@ -49,18 +49,46 @@
                                 <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
                             </svg>
                         </a>
-                        <ul class="absolute left-0 top-full mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="font-size: 12px;">
-                            @forelse($divisions as $division)
-                                <li>
-                                    <a href="{{ route('struktur.show', $division->name) }}" class="block px-4 py-2 text-gray-700 hover:bg-red-900 hover:text-white {{ $loop->first ? 'rounded-t-lg' : '' }} {{ $loop->last ? 'rounded-b-lg' : '' }}">
-                                        {{ $division->name }}
-                                    </a>
-                                </li>
+                        <ul class="absolute left-0 top-full mt-2 w-56 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="font-size: 12px;">
+                            @forelse($fields as $field)
+                                @if($field->departments->count() > 0)
+                                    <li class="relative group/submenu">
+                                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-900 hover:text-white {{ $loop->first ? 'rounded-t-lg' : '' }} flex items-center justify-between">
+                                            {{ $field->name }}
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="size-4 text-gray-400">
+                                                <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                            </svg>
+                                        </a>
+                                        <ul class="absolute left-full top-0 ml-1 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-200">
+                                            @foreach($field->departments as $department)
+                                                <li>
+                                                    <a href="{{ route('struktur.show', $department->name) }}" class="block px-4 py-2 text-gray-700 hover:bg-red-900 hover:text-white {{ $loop->first ? 'rounded-t-lg' : '' }} {{ $loop->last ? 'rounded-b-lg' : '' }}">
+                                                        {{ $department->name }}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                @endif
                             @empty
                                 <li>
-                                    <span class="block px-4 py-2 text-gray-500">Tidak ada divisi</span>
+                                    <span class="block px-4 py-2 text-gray-500">Tidak ada bidang</span>
                                 </li>
                             @endforelse
+                            
+                            @php
+                                $departmentsWithoutField = $departments->whereNull('field_id');
+                            @endphp
+                            @if($departmentsWithoutField->count() > 0)
+                                <li class="border-t border-gray-200"></li>
+                                @foreach($departmentsWithoutField as $department)
+                                    <li>
+                                        <a href="{{ route('struktur.show', $department->name) }}" class="block px-4 py-2 text-gray-700 hover:bg-red-900 hover:text-white {{ $loop->last ? 'rounded-b-lg' : '' }}">
+                                            {{ $department->name }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            @endif
                         </ul>
                     </li>
                     <li>
@@ -139,17 +167,45 @@
                         </svg>
                     </button>
                     <ul class="mobile-dropdown-menu hidden pl-4 mt-2 space-y-2">
-                        @forelse($divisions as $division)
-                            <li>
-                                <a href="{{ route('struktur.show', $division->name) }}" class="block px-4 py-2 text-sm text-red-900 hover:bg-gray-100 rounded-lg">
-                                    {{ $division->name }}
-                                </a>
-                            </li>
+                        @forelse($fields as $field)
+                            @if($field->departments->count() > 0)
+                                <li>
+                                    <button class="mobile-dropdown-toggle w-full flex items-center justify-between px-4 py-2 text-sm text-red-900 hover:bg-gray-100 rounded-lg">
+                                        <span>{{ $field->name }}</span>
+                                        <svg class="w-4 h-4 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </button>
+                                    <ul class="mobile-dropdown-menu hidden pl-4 mt-1 space-y-1">
+                                        @foreach($field->departments as $department)
+                                            <li>
+                                                <a href="{{ route('struktur.show', $department->name) }}" class="block px-4 py-2 text-xs text-red-900 hover:bg-gray-100 rounded-lg">
+                                                    {{ $department->name }}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @endif
                         @empty
                             <li>
-                                <span class="block px-4 py-2 text-sm text-gray-500">Tidak ada divisi</span>
+                                <span class="block px-4 py-2 text-sm text-gray-500">Tidak ada bidang</span>
                             </li>
                         @endforelse
+                        
+                        @php
+                            $departmentsWithoutField = $departments->whereNull('field_id');
+                        @endphp
+                        @if($departmentsWithoutField->count() > 0)
+                            <li class="border-t border-gray-200 my-2"></li>
+                            @foreach($departmentsWithoutField as $department)
+                                <li>
+                                    <a href="{{ route('struktur.show', $department->name) }}" class="block px-4 py-2 text-sm text-red-900 hover:bg-gray-100 rounded-lg">
+                                        {{ $department->name }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        @endif
                     </ul>
                 </li>
 

@@ -9,6 +9,7 @@ use Filament\Schemas\Components\Fieldset;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\DatePicker;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
 
@@ -46,6 +47,17 @@ class BlogForm
                             ->unique(ignoreRecord: true)
                             ->rules(['alpha_dash'])
                             ->helperText('URL-friendly version of the title'),
+                            
+                        DatePicker::make('start_at')
+                            ->label('Start Date')
+                            ->required(),
+                            
+                        Select::make('department_id')
+                            ->label('Department')
+                            ->relationship('department', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->required(),
                             
                         Textarea::make('description')
                             ->label('Description')

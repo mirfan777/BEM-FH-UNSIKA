@@ -58,9 +58,9 @@ class MemberResource extends Resource
                     ->required()
                     ->maxLength(255),
 
-                Select::make('division_id')
-                    ->label('Division')
-                    ->relationship('division', 'name')
+                Select::make('department_id')
+                    ->label('Department')
+                    ->relationship('department', 'name')
                     ->preload()
                     ->required(),
 
@@ -93,8 +93,8 @@ class MemberResource extends Resource
                     ->label('NPM')
                     ->searchable(),
 
-                TextColumn::make('division.name')
-                    ->label('Division')
+                TextColumn::make('department.name')
+                    ->label('Department')
                     ->sortable(),
             ])
             ->filters([

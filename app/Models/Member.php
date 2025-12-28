@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
 {
-    protected $fillable = ['name', 'position', 'position_name', 'photo', 'npm', 'division_id'];
+    protected $fillable = ['name', 'position', 'position_name', 'photo', 'npm', 'department_id'];
 
-    public function division()
+    public function department()
     {
-        return $this->belongsTo(Division::class);
+        return $this->belongsTo(Department::class);
     }
 }
