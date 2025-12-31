@@ -54,6 +54,38 @@
     </section>
     
     
+       <!-- Video Company Profile Section -->
+    <section class="py-24 bg-gradient-to-br from-red-50 to-white relative overflow-hidden" id="video-profile">
+        <!-- Background decoration -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-red-100 rounded-full blur-3xl opacity-30 -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-red-200 rounded-full blur-3xl opacity-20 -z-10"></div>
+    
+        <div class="mx-auto md:px-20 px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <p class="text-red-800 font-semibold mb-2">Video Company Profile</p>
+                <h2 class="text-4xl font-bold mb-4">Kenali Lebih Dekat BEM-KM FH UNSIKA</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                Saksikan perjalanan dan kiprah kami dalam melayani dan memberdayakan mahasiswa Fakultas Hukum UNSIKA
+                </p>
+            </div>
+
+            <div class="max-w-5xl mx-auto" data-aos="zoom-in">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl group">
+                    <div class="relative aspect-video bg-gray-900">
+                        <iframe 
+                            class="w-full h-full"
+                            src="https://www.youtube.com/embed/jX2Tw5qFAGo?si=I3zIIhO_Yk7m2KdZ" 
+                            title="BEM-KM FH UNSIKA Company Profile" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                
+                    <!-- Overlay decoration on hover -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+    </section>
 
         <!-- Activities Section -->
     <section class="py-24 bg-white" id="kegiatan">
