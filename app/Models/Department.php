@@ -16,6 +16,6 @@ class Department extends Model
 
     public function field()
     {
-        return $this->belongsTo(field::class, 'field_id');
+        return $this->belongsTo(Field::class, 'field_id');
     }
 }
