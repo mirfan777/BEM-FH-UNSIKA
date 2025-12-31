@@ -42,7 +42,7 @@ class DepartmentResource extends Resource
                     ->maxLength(255),
 
                 Select::make('field_id')
-                    ->label('Bidang / Field')
+                    ->label('Bidang ')
                     ->relationship('field', 'name')
                     ->searchable()
                     ->preload()

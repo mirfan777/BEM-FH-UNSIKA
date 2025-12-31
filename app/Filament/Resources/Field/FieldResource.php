@@ -33,7 +33,7 @@ class FieldResource extends Resource
         return $schema
             ->components([
                 TextInput::make('name')
-                    ->label('Nama Bidang / Field Name')
+                    ->label('Nama Bidang  Name')
                     ->required()
                     ->maxLength(255)
                     ->unique(ignoreRecord: true),
@@ -46,7 +46,7 @@ class FieldResource extends Resource
             ->recordTitleAttribute('name')
             ->columns([
                 TextColumn::make('name')
-                    ->label('Nama Bidang / Field Name')
+                    ->label('Nama Bidang  Name')
                     ->searchable(),
             ])
             ->filters([

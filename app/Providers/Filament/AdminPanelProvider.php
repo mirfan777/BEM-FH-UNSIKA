@@ -79,7 +79,7 @@ class AdminPanelProvider extends PanelProvider
                             ->label('Struktur Organisasi')
                             ->items([
                                 NavigationItem::make('Field')
-                                    ->label('Bidang / Field')
+                                    ->label('Bidang ')
                                     ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.resources.fields.*'))
                                     ->icon('heroicon-o-bookmark')
                                     ->url(fn (): string => FieldResource::getUrl()),
