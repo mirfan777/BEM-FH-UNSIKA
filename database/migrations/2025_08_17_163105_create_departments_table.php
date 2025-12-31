@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->bigunsignedInteger('field_id')->nullable();
-            $table->foreign('field_id')->references('id')->on('fields')->onDelete('set null');
+            $table->foreignId('field_id')->constrained('fields')->cascadeOnDelete();
             $table->string('logo')->nullable();
             $table->string('thumbnail')->nullable();
             $table->text('description')->nullable();
