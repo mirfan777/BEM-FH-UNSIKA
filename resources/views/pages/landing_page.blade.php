@@ -53,6 +53,7 @@
         </div>
     </section>
     
+    
 
         <!-- Activities Section -->
     <section class="py-24 bg-white" id="kegiatan">
