@@ -15,7 +15,7 @@
     <x-guest.layout>
     <!-- Page Header -->
     
-    <section class="pt-32 pb-12 bg-white ml-20 mr-20 mb-20">
+    <section class="max-w-7xl mx-4 sm:mx-8 lg:mx-20 my-20 px-6 sm:px-8 lg:px-12 py-8 sm:py-12">
         <!-- Breadcrumb -->
         <p class="text-red-800 font-semibold mb-10" 
            data-aos="fade-down">
@@ -63,7 +63,7 @@
         </div>
         
         <!-- Content -->
-        <div class="md:p-10 p-2" 
+        <div class="p-0" 
              data-aos="fade-up" 
              data-aos-delay="400"
              data-aos-duration="800">

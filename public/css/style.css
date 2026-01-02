@@ -1,5 +1,16 @@
 html {
     scroll-behavior: smooth;
+     overflow-x: hidden !important;
+    max-width: 100vw;
+}
+
+body {
+    overflow-x: hidden !important;
+    max-width: 100vw;
+}
+
+#kegiatan {
+    overflow-x: hidden !important;
 }
 
 .hero-section {

@@ -153,7 +153,7 @@
 
                 <!-- Publikasi -->
                 <li>
-                    <a href="{{ url('/#kegiatan') }}" class="block px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors">
+                    <a href="{{ url('/kegiatan') }}" class="block px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors">
                         Publikasi
                     </a>
                 </li>
