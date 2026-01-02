@@ -106,7 +106,7 @@
     <div id="mobile-overlay" class="fixed inset-0 z-[60] hidden transition-opacity duration-300" style="background-color: rgba(0, 0, 0, 0.3);"></div>
 
     <!-- Mobile Sidebar -->
-    <div id="mobile-sidebar" class="fixed top-0 right-0 h-full w-80 bg-white text-red-900 z-[70] transform translate-x-full transition-transform duration-300 overflow-y-auto overflow-x-hidden max-w-[85vw]">
+    <div id="mobile-sidebar" class="fixed top-0 right-0 h-full w-80 bg-white text-red-900 z-[70] transform translate-x-full transition-transform duration-300 overflow-y-auto">
         <div class="p-6">
             <!-- Close Button -->
             <button id="close-sidebar" class="absolute top-4 right-4 text-red-900 hover:text-gray-300">
