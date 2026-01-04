@@ -62,6 +62,100 @@
                 </button>
             </div>
         </div>
+
+    <!-- Filter Modal (hidden by default) -->
+<!-- Tambahkan Modal Filter setelah section search (bisa diletakkan sebelum penutup </body>) -->
+<div id="filterModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+    <div id="filterModalContent" class="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+        <!-- Header Modal -->
+        <div class="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-900">Filter Kajian</h3>
+            <button id="closeFilterModal" class="text-gray-400 hover:text-gray-600 transition-colors p-1">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Body Modal -->
+        <div class="p-4 sm:p-6">
+            <div class="mb-6">
+                <label class="block text-sm font-semibold text-gray-700 mb-3">Tanggal Publikasi</label>
+                <div class="space-y-2">
+                    <!-- Option: Semua Waktu -->
+                    <label class="flex items-center p-2.5 sm:p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input type="radio" name="dateFilter" value="all" checked class="w-4 h-4 text-blue-600 focus:ring-2 focus:ring-blue-500">
+                        <span class="ml-3 text-sm sm:text-base text-gray-700">Semua Waktu</span>
+                    </label>
+
+                    <!-- Option: Hari Ini -->
+                    <label class="flex items-center p-2.5 sm:p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input type="radio" name="dateFilter" value="today" class="w-4 h-4 text-blue-600 focus:ring-2 focus:ring-blue-500">
+                        <span class="ml-3 text-sm sm:text-base text-gray-700">Hari Ini</span>
+                    </label>
+
+                    <!-- Option: 7 Hari Terakhir -->
+                    <label class="flex items-center p-2.5 sm:p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input type="radio" name="dateFilter" value="week" class="w-4 h-4 text-blue-600 focus:ring-2 focus:ring-blue-500">
+                        <span class="ml-3 text-sm sm:text-base text-gray-700">7 Hari Terakhir</span>
+                    </label>
+
+                    <!-- Option: 30 Hari Terakhir -->
+                    <label class="flex items-center p-2.5 sm:p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input type="radio" name="dateFilter" value="month" class="w-4 h-4 text-blue-600 focus:ring-2 focus:ring-blue-500">
+                        <span class="ml-3 text-sm sm:text-base text-gray-700">30 Hari Terakhir</span>
+                    </label>
+
+                    <!-- Option: Tahun Ini -->
+                    <label class="flex items-center p-2.5 sm:p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input type="radio" name="dateFilter" value="year" class="w-4 h-4 text-blue-600 focus:ring-2 focus:ring-blue-500">
+                        <span class="ml-3 text-sm sm:text-base text-gray-700">Tahun Ini</span>
+                    </label>
+
+                    <!-- Option: Rentang Kustom -->
+                    <label class="flex items-center p-2.5 sm:p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input type="radio" name="dateFilter" value="custom" class="w-4 h-4 text-blue-600 focus:ring-2 focus:ring-blue-500">
+                        <span class="ml-3 text-sm sm:text-base text-gray-700">Rentang Tanggal Kustom</span>
+                    </label>
+                </div>
+
+                <!-- Custom Date Range Inputs -->
+                <div id="customDateRange" class="hidden mt-4 p-3 sm:p-4 bg-gray-50 rounded-lg space-y-3">
+                    <div>
+                        <label class="block text-xs sm:text-sm text-gray-600 mb-1">Dari Tanggal</label>
+                        <input type="date" id="startDate" class="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs sm:text-sm text-gray-600 mb-1">Sampai Tanggal</label>
+                        <input type="date" id="endDate" class="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Modal -->
+        <div class="flex gap-2 sm:gap-3 p-4 sm:p-6 border-t border-gray-200 bg-gray-50">
+            <button id="resetFilterBtn" class="flex-1 px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base border border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-100 transition-colors">
+                Reset
+            </button>
+            <button id="applyFilterBtn" class="flex-1 px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                Terapkan Filter
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Pesan Tidak Ada Hasil - Letakkan SETELAH grid kajian (di luar grid) -->
+<div id="noResultsMessage" class="hidden text-center py-16 px-4">
+    <svg class="w-16 h-16 sm:w-20 sm:h-20 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    </svg>
+    <h3 class="text-lg sm:text-xl font-semibold text-gray-700 mb-2">Tidak Ada Kajian yang Cocok</h3>
+    <p class="text-sm sm:text-base text-gray-500">Tidak ada kajian yang sesuai dengan filter yang Anda pilih</p>
+    <button id="clearFilterFromMessage" class="mt-4 px-4 py-2 text-sm sm:text-base bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+        Hapus Filter
+    </button>
+</div>
     </section>
 
     <!-- Activities Grid -->
