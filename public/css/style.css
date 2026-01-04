@@ -118,10 +118,25 @@ body {
     transform: scale(0.9);
 }
 
+#filterModal {
+    backdrop-filter: blur(4px);
+}
+
+#filterModalContent {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
 
 /* Modal & Checkmark Animations */
 .modal-overlay { animation: fadeIn 0.3s ease-out; }
 .modal-overlay.closing { animation: fadeOut 0.3s ease-out; }
+
+@media (max-width: 640px) {
+    #filterModalContent {
+        margin: 1rem;
+        max-height: calc(100vh - 2rem);
+    }
+}
 
 @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
 @keyframes fadeOut { from {opacity:1;} to {opacity:0;} }
