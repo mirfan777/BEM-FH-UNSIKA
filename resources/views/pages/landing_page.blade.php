@@ -35,11 +35,11 @@
     <section class="py-24 bg-white" id="tentang">
         <div class="mx-auto md:px-20 px-6" >
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="relative" data-aos="fade-right">
-                    <img src="{{ asset('images/landing_image.png') }}" alt="Students" class="rounded-3xl">
+                <div class="relative" data-aos="fade-up">
+                    <img src="{{ asset('images/tentang_kami_photo.png') }}" alt="Students" class="rounded-3xl">
                 </div>
                 
-                <div data-aos="fade-left">
+                <div data-aos="fade-up">
                     <p class="text-red-800 font-semibold mb-2">Tentang Kami</p>
                     <h2 class="text-4xl font-bold mb-6">BEM-KM FH UNSIKA</h2>
                     <p class="text-gray-600 leading-relaxed mb-4">
@@ -145,15 +145,15 @@
     <section class="py-24 bg-gray-50" id="kontak" style="margin-bottom: 80px">
         <div class="mx-auto md:px-20 px-6" >
             <div class="grid md:grid-cols-2 gap-16">
-                <div data-aos="fade-right">
+                <div data-aos="fade-up">
                     <p class="text-red-800 font-semibold mb-2">Hubungi Kami</p>
                     <h2 class="text-4xl font-bold mb-6">Kirimkan pesan Anda melalui formulir ini!</h2>
                     <p class="text-gray-600 leading-relaxed">
                         Pesan yang Anda kirimkan akan kami terima melalui email kami. Kami akan segera menghubungi untuk tindak lanjut.
                     </p>
                 </div>
-                
-                <div data-aos="fade-left">
+
+                <div data-aos="fade-up">
                     <form id="contactForm" action="{{ route('submit.form') }}" method="POST" class="space-y-6">
                         @csrf
                         <div>
