@@ -16,51 +16,50 @@
     <!-- Page Header -->
     
     <section class="max-w-7xl mx-4 sm:mx-8 lg:mx-20 my-20 px-6 sm:px-8 lg:px-12 py-8 sm:py-12">
-        <!-- Breadcrumb -->
-        <p class="text-red-800 font-semibold mb-10" 
-           data-aos="fade-down">
-            Publikasi > Kajian
+ <!-- Breadcrumb -->
+    <nav class="mb-8" data-aos="fade-down">
+        <p class="text-red-800 font-semibold">
+            <a href="{{ url('/kegiatan') }}" class="hover:underline">Publikasi</a> > Kajian
         </p>
-        
-        <div class="p-2">
-            <!-- Title -->
-            <h1 class="text-4xl font-bold" 
-                data-aos="fade-up" 
-                data-aos-delay="100">
+    </nav>
+    
+    <!-- Article Header -->
+    <article>
+        <!-- Title -->
+        <header class="mb-8" data-aos="fade-up">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-gray-900 mb-8">
                 {{ $kegiatan->title }}
             </h1>
-
-            @if($kegiatan->department)
-                @if($kegiatan->department->field)
-                    <h2 class="text-xl text-gray-700"
-                        data-aos="fade-up" 
-                        data-aos-delay="150">
-                        {{ $kegiatan->department->field->name }}
-                    </h2>
-                @endif
-
-                <h3 class="text-base text-gray-700"
-                    data-aos="fade-up" 
-                    data-aos-delay="150">
-                    {{ $kegiatan->department->name }}
-                </h3>
-            @endif
             
-            <!-- Date -->
-            <p class="text-gray-600" 
-               data-aos="fade-up" 
-               data-aos-delay="200">
-                {{ \Carbon\Carbon::parse($kegiatan->start_at)->format('d F Y') }}
-            </p>
-            
-            <!-- Thumbnail Image -->
+            <!-- Meta Information -->
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-gray-600">
+                <div class="space-y-1">
+                    @if($kegiatan->department)
+                        @if($kegiatan->department->field)
+                            <p class="font-semibold text-gray-900">
+                                {{ $kegiatan->department->field->name }}
+                            </p>
+                        @endif
+                        
+                        <p class="text-sm">
+                            {{ $kegiatan->department->name }}
+                        </p>
+                    @endif
+                </div>
+                
+                <!-- Date -->
+                <p class="text-sm sm:text-right">
+                    {{ \Carbon\Carbon::parse($kegiatan->start_at)->translatedFormat('d F Y') }}
+                </p>
+            </div>
+        </header>
+        
+        <!-- Featured Image -->
+        <figure class="mb-12" data-aos="fade-up" data-aos-delay="200">
             <img src="/storage/{{ $kegiatan->thumbnail }}" 
                  alt="{{ $kegiatan->title }}" 
-                 class="w-full max-h-[500px] my-6 object-cover rounded-2xl shadow-lg"
-                 data-aos="zoom-in" 
-                 data-aos-delay="300"
-                 data-aos-duration="1000">
-        </div>
+                 class="w-full h-auto max-h-[600px] object-cover rounded-lg shadow-lg">
+        </figure>
         
         <!-- Content -->
         <div class="p-0" 
