@@ -106,7 +106,7 @@
                 </div>
             </div>
             
-            <div class="relative" data-aos="fade-up" data-aos-delay="200">
+            <div class="relative px-10 md:px-15" data-aos="fade-up" data-aos-delay="200">
                 <!-- Navigation Buttons -->
                 <button id="prevBtn" class="absolute left-1 md:left-3 lg:left-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 md:p-3 shadow-lg hover:bg-red-800 transition hover:text-white" style="transition: all 0.3s ease-in-out;">
                     <svg class="w-6 h-6 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

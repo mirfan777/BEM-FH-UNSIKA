@@ -73,7 +73,7 @@
                             <p class="text-gray-600 text-sm mb-4">
                                 {{ $item->description }}
                             </p>
-                            <p class="text-gray-400 text-sm">{{ $item->start_at }}</p>
+                            <p class="text-gray-400 text-sm">{{ \Carbon\Carbon::parse($item->start_at)->format('d/m/Y') }}</p>
                         </div>
                     </a>
                 </div>
@@ -81,17 +81,30 @@
             </div>
         </div>
     </section>
+               <!-- Pesan Tidak Ada Hasil - Letakkan SETELAH grid kajian (di luar grid) -->
+           <div id="noResultsMessage" class="hidden text-center py-16 px-4">
+               <svg class="w-16 h-16 sm:w-20 sm:h-20 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="00 24 24">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M910h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+               </svg>
+               <h3 class="text-lg sm:text-xl font-semibold text-gray-700 mb-2">Tidak Ada Kajian yang Cocok</h3>
+               <p class="text-sm sm:text-base text-gray-500">Tidak ada kajian yang sesuai dengan filter yang Anda pilih</p>
+               <button id="clearFilterFromMessage" class="mt-4 px-4 py-2 text-sm sm:text-base bg-red-800 text-white rounded-lg hover:bg-red-900 transition-colors">
+                   Hapus Filter
+               </button>
+           </div>
+        </div>
+    </div>
     </main>
 
     <!-- filter modal -->             
     <div id="filterModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
-        <div id="filterModalContent" class="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh]overflow-y-auto transform           scale-95 transition-transform duration-300">
+        <div id="filterModalContent" class="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto transform  scale-95 transition-transform duration-300">
             <!-- Header Modal -->
             <div class="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200">
                 <h3 class="text-lg sm:text-xl font-semibold text-gray-900">Filter Kajian</h3>
                 <button id="closeFilterModal" class="text-gray-400 hover:text-gray-600 transition-colors p-1">
                     <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l1212"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
             </div>
@@ -164,23 +177,12 @@
                </div>
            </div>
         
-           <!-- Pesan Tidak Ada Hasil - Letakkan SETELAH grid kajian (di luar grid) -->
-           <div id="noResultsMessage" class="hidden text-center py-16 px-4">
-               <svg class="w-16 h-16 sm:w-20 sm:h-20 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="00 24 24">
-                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M910h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-               </svg>
-               <h3 class="text-lg sm:text-xl font-semibold text-gray-700 mb-2">Tidak Ada Kajian yang Cocok</h3>
-               <p class="text-sm sm:text-base text-gray-500">Tidak ada kajian yang sesuai dengan filter yang Anda pilih</p>
-               <button id="clearFilterFromMessage" class="mt-4 px-4 py-2 text-sm sm:text-base bg-red-800 text-white rounded-lg hover:bg-red-900 transition-colors">
-                   Hapus Filter
-               </button>
-           </div>
-        </div>
-    </div>
+
     
     <!-- AOS JS -->
     <script src="{{ asset('aos/aos.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/navbar.js') }}"></script>
     
     <!-- Initialize AOS -->
     <script>
