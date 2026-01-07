@@ -53,7 +53,7 @@
                             @forelse($fields as $field)
                                 @if($field->departments->count() > 0)
                                     <li class="relative group/submenu">
-                                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-900 hover:text-white {{ $loop->first ? 'rounded-t-lg' : '' }} flex items-center justify-between">
+                                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-900 hover:text-white {{ $loop->first ? 'rounded-t-lg' : '' }} {{ $loop->last ? 'rounded-b-lg' : '' }} flex items-center justify-between">
                                             {{ $field->name }}
                                             <svg viewBox="0 0 20 20" fill="currentColor" class="size-4 text-gray-400">
                                                 <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />

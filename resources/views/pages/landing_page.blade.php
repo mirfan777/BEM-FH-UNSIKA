@@ -65,7 +65,7 @@
                 <p class="text-red-800 font-semibold mb-2">Video Company Profile</p>
                 <h2 class="text-4xl font-bold mb-4">Kenali Lebih Dekat BEM-KM FH UNSIKA</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">
-                Saksikan perjalanan dan kiprah kami dalam melayani dan memberdayakan mahasiswa Fakultas Hukum UNSIKA
+                Saksikan perjalanan dan kiprah kami dalam melayani dan memberdayakan mahasiswa Fakultas Hukum Unsika
                 </p>
             </div>
 
