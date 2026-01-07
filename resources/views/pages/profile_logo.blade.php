@@ -12,7 +12,7 @@
 <body>
     <x-guest.layout>
     <main class="bg-white mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 my-20 md:mx-20">
-        <p class="text-red-800 font-semibold mb-10" data-aos="fade-up">Profil > Filosofi Logo</p>
+        <p class="text-red-800 font-semibold mb-10" data-aos="fade-down">Profil > Filosofi Logo</p>
       <div class="">
         <h1 class="text-4xl font-bold text-gray-900 mb-12" data-aos="fade-up">Filosofi Logo</h1>
 

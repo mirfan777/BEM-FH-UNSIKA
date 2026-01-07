@@ -17,7 +17,7 @@
     
     <section class="max-w-7xl mx-4 sm:mx-8 lg:mx-20 my-20 px-6 sm:px-8 lg:px-12 py-8 sm:py-12">
  <!-- Breadcrumb -->
-    <nav class="mb-8" data-aos="fade-up">
+    <nav class="mb-8" data-aos="fade-down">
         <p class="text-red-800 font-semibold">
             <a href="{{ url('/kegiatan') }}" class="hover:underline">Publikasi</a> > Kajian
         </p>

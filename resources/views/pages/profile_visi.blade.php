@@ -12,7 +12,7 @@
     <x-guest.layout>
     <!-- Main Content -->
     <main class="mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 my-20 md:mx-20">
-        <p class="text-red-800 font-semibold mb-10" data-aos="fade-up">Profil > Visi, Misi, dan Tujuan</p>
+        <p class="text-red-800 font-semibold mb-10" data-aos="fade-down">Profil > Visi, Misi, dan Tujuan</p>
         <!-- Header Section -->
         <div class="mb-8 sm:mb-12" data-aos="fade-up">
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
@@ -24,7 +24,7 @@
         </div>
 
         <!-- Visi Section -->
-        <section class="mb-10 sm:mb-16" data-aos="fade-up" data-aos-delay="100">
+        <section class="mb-10 sm:mb-16" data-aos="fade-right" data-aos-delay="100">
             <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 lg:p-10 border-l-4 border-red-700">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Visi</h2>
                 <p class="text-base sm:text-base text-gray-700 leading-relaxed">
@@ -34,11 +34,11 @@
         </section>
 
         <!-- Misi Section -->
-        <section class="mb-10 sm:mb-16" data-aos="fade-up" data-aos-delay="200">
+        <section class="mb-10 sm:mb-16" data-aos="fade-right" data-aos-delay="200">
             <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 lg:p-10 border-l-4 border-red-700">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Misi</h2>
                 <div class="space-y-4 sm:space-y-5">
-                    <div class="flex gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex gap-3 sm:gap-4" data-aos="fade-right" data-aos-delay="300">
                         <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-red-700 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
                             1
                         </div>
@@ -46,7 +46,7 @@
                             Membangun internal BEM-KM FH Unsika yang berorientasi pada peningkatan kualitas diri dan evaluasi.
                         </p>
                     </div>
-                    <div class="flex gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="350">
+                    <div class="flex gap-3 sm:gap-4" data-aos="fade-right" data-aos-delay="350">
                         <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-red-700 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
                             2
                         </div>
@@ -54,7 +54,7 @@
                             Mewujudkan komunikasi efektif yang melibatkan seluruh elemen mahasiswa untuk kesejahteraan bersama.
                         </p>
                     </div>
-                    <div class="flex gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex gap-3 sm:gap-4" data-aos="fade-right" data-aos-delay="400">
                         <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-red-700 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
                             3
                         </div>
@@ -62,7 +62,7 @@
                             Mengoptimalkan peran BEM sebagai wadah penyampaian dan perjuangan aspirasi mahasiswa FH Unsika.
                         </p>
                     </div>
-                    <div class="flex gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="450">
+                    <div class="flex gap-3 sm:gap-4" data-aos="fade-right" data-aos-delay="450">
                         <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-red-700 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
                             4
                         </div>
@@ -70,7 +70,7 @@
                             Meningkatkan kepekaan dan proaktivitas BEM dalam menanggapi isu sosial politik di segala tingkatan.
                         </p>
                     </div>
-                    <div class="flex gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex gap-3 sm:gap-4" data-aos="fade-right" data-aos-delay="500">
                         <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-red-700 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
                             5
                         </div>
@@ -78,7 +78,7 @@
                             Menciptakan BEM-KM FH Unsika yang peduli dan bekerja sama dengan pihak terkait dalam aspek akademik dan non-akademik.
                         </p>
                     </div>
-                    <div class="flex gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="550">
+                    <div class="flex gap-3 sm:gap-4" data-aos="fade-right" data-aos-delay="550">
                         <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-red-700 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
                             6
                         </div>
@@ -91,11 +91,11 @@
         </section>
 
         <!-- Tujuan Section -->
-        <section class="mb-10 sm:mb-16" data-aos="fade-up" data-aos-delay="600">
+        <section class="mb-10 sm:mb-16" data-aos="fade-right" data-aos-delay="600">
             <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 lg:p-10 border-l-4 border-red-700">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Tujuan</h2>
                 <div class="space-y-4 sm:space-y-5">
-                    <div class="flex gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="650">
+                    <div class="flex gap-3 sm:gap-4" data-aos="fade-right" data-aos-delay="650">
                         <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-red-700 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
                             1
                         </div>
@@ -103,7 +103,7 @@
                             Meningkatkan kualitas personalia pengurus BEM-KM FH Unsika dengan mengembangkan potensi dan keterampilan anggota melalui pelatihan dan evaluasi berkelanjutan.
                         </p>
                     </div>
-                    <div class="flex gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="700">
+                    <div class="flex gap-3 sm:gap-4" data-aos="fade-right" data-aos-delay="700">
                         <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-red-700 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
                             2
                         </div>
@@ -111,7 +111,7 @@
                             Terwujudnya komunikasi efektif dengan membangun saluran komunikasi yang transparan dan inklusif antara seluruh elemen mahasiswa untuk mendukung kesejahteraan bersama.
                         </p>
                     </div>
-                    <div class="flex gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="750">
+                    <div class="flex gap-3 sm:gap-4" data-aos="fade-right" data-aos-delay="750">
                         <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-red-700 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
                             3
                         </div>
@@ -119,7 +119,7 @@
                             Responsif terhadap isu sosial politik dengan meningkatkan kepekaan dan proaktivitas dalam menanggapi isu-isu sosial politik yang relevan di berbagai tingkatan.
                         </p>
                     </div>
-                    <div class="flex gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="800">
+                    <div class="flex gap-3 sm:gap-4" data-aos="fade-right" data-aos-delay="800">
                         <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-red-700 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
                             4
                         </div>
@@ -127,7 +127,7 @@
                             Kolaborasi bersama pihak terkait guna terciptanya kerja sama dengan berbagai pihak dalam aspek akademik dan nonakademik untuk meningkatkan kualitas pendidikan dan kesejahteraan mahasiswa.
                         </p>
                     </div>
-                    <div class="flex gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="850">
+                    <div class="flex gap-3 sm:gap-4" data-aos="fade-right" data-aos-delay="850">
                         <div class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-red-700 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
                             5
                         </div>
