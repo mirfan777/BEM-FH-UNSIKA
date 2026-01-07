@@ -69,7 +69,7 @@
                 </p>
             </div>
 
-            <div class="max-w-5xl mx-auto" data-aos="zoom-in">
+            <div class="max-w-5xl mx-auto" data-aos="fade-up">
                 <div class="relative rounded-3xl overflow-hidden shadow-2xl group">
                     <div class="relative aspect-video bg-gray-900">
                         <iframe 
@@ -99,10 +99,11 @@
                     <p class="text-gray-600 mb-6" data-aos="fade-up" data-aos-delay="100">
                        Temukan berbagai publikasi berisi gagasan, hasil riset, dan analisis kritis BEM-KM FH Unsika terhadap isu-isu hukum, sosial, dan kemahasiswaan!
                     </p>
+                    <div data-aos="fade-up" data-aos-delay="100">
                     <a href="{{ url('/kegiatan') }}" >
-                    <button class="text-red-900 border-2 border-red-900 px-6 py-2 rounded hover:bg-red-900 hover:text-white" data-aos="fade-up" data-aos-delay="200" style="transition: all 0.3s ease-in-out;">
+                    <button class="text-red-900 border-2 border-red-900 px-6 py-2 rounded hover:bg-red-900 hover:text-white" style="transition: all 0.3s ease-in-out;" >
                         Lebih Banyak
-                    </button></a>
+                    </button></a></div>
                 </div>
             </div>
             

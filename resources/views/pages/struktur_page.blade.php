@@ -23,7 +23,7 @@
             </h1>
 
             <!-- Hero Image -->
-            <div class="w-full rounded-lg overflow-hidden mb-8 shadow-lg" data-aos="zoom-in">
+            <div class="w-full rounded-lg overflow-hidden mb-8 shadow-lg" data-aos="fade-up">
                 <img 
                     src="{{ asset('storage/' . $department->thumbnail) }}" 
                     alt="{{ $department->name }}" 

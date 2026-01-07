@@ -12,11 +12,11 @@
 <body>
     <x-guest.layout>
     <main class="bg-white mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 my-20 md:mx-20">
-        <p class="text-red-800 font-semibold mb-10" data-aos="fade-down">Profil > Filosofi Logo</p>
+        <p class="text-red-800 font-semibold mb-10" data-aos="fade-up">Profil > Filosofi Logo</p>
       <div class="">
         <h1 class="text-4xl font-bold text-gray-900 mb-12" data-aos="fade-up">Filosofi Logo</h1>
 
-        <div class="flex justify-center mb-8" data-aos="zoom-in" data-aos-delay="100">
+        <div class="flex justify-center mb-8" data-aos="fade-up" data-aos-delay="100">
           <img 
             src="{{ asset('images/logo/logo_hero.png') }}" 
             alt="Logo Pragya Dharma" 
@@ -28,7 +28,7 @@
           Burung hantu melambangkan kebijaksanaan, kecerdasan, pendidikan, dan pengamatan yang tajam. Dalam konteks organisasi mahasiswa hukum, burung hantu menjadi simbol kemampuan untuk memahami kompleksitas hukum dengan bijak dan kritis, serta menjadi pelopor dalam memberikan solusi atas permasalahan hukum yang dihadapi masyarakat.
         </p>
 
-        <div class="grid md:grid-cols-3 gap-8 mb-1" data-aos="fade-right" data-aos-delay="300">
+        <div class="grid md:grid-cols-3 gap-8 mb-1" data-aos="fade-up" data-aos-delay="300">
           <div class="flex justify-center items-start">
             <img 
               src="{{ asset('images/logo/head_logo_photo.png') }}" 
@@ -44,7 +44,7 @@
           </div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 mb-16" data-aos="fade-left" data-aos-delay="350">
+        <div class="grid md:grid-cols-3 gap-8 mb-16" data-aos="fade-up" data-aos-delay="350">
           <div class="flex justify-center items-start">
             <!-- Empty space for alignment -->
           </div>
@@ -56,7 +56,7 @@
           </div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 mb-1" data-aos="fade-right" data-aos-delay="400">
+        <div class="grid md:grid-cols-3 gap-8 mb-1" data-aos="fade-up" data-aos-delay="400">
           <div class="flex justify-center items-start">
             <img 
               src="{{ asset('images/logo/wing_logo_photo.png') }}" 
@@ -72,7 +72,7 @@
           </div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 mb-16" data-aos="fade-left" data-aos-delay="450">
+        <div class="grid md:grid-cols-3 gap-8 mb-16" data-aos="fade-up" data-aos-delay="450">
           <div class="flex justify-center items-start">
             <!-- Empty space for alignment -->
           </div>
@@ -84,7 +84,7 @@
           </div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 mb-16" data-aos="fade-right" data-aos-delay="500">
+        <div class="grid md:grid-cols-3 gap-8 mb-16" data-aos="fade-up" data-aos-delay="500">
           <div class="flex justify-center items-start">
             <img 
               src="{{ asset('images/logo/simetris_photo (1).png') }}" 
@@ -103,13 +103,13 @@
         <div class="mb-12" data-aos="fade-up" data-aos-delay="550">
           <h2 class="text-3xl font-bold text-gray-900 mb-6">Warna yang Digunakan</h2>
           <ol class="list-decimal list-inside space-y-3 text-gray-600">
-            <li data-aos="fade-left" data-aos-delay="600">
+            <li data-aos="fade-up" data-aos-delay="600">
               <span class="font-semibold">Merah Keunguan:</span> Warna merah keunguan menggambarkan perubahan dan pertumbuhan.
             </li>
-            <li data-aos="fade-left" data-aos-delay="650">
+            <li data-aos="fade-up" data-aos-delay="650">
               <span class="font-semibold">Cokelat Keemasan:</span> Warna cokelat keemasan memiliki makna kesuksesan dan keunggulan dalam organisasi.
             </li>
-            <li data-aos="fade-left" data-aos-delay="700">
+            <li data-aos="fade-up" data-aos-delay="700">
               <span class="font-semibold">Gradasi Warna:</span> Gradasi warna merah keunguan dan cokelat keemasan memberikan makna keberanian dan kebijaksanaan.
             </li>
           </ol>
