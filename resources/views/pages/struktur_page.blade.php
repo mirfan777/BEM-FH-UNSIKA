@@ -27,7 +27,7 @@
                 <img 
                     src="{{ asset('storage/' . $department->thumbnail) }}" 
                     alt="{{ $department->name }}" 
-                    class="w-full h-64 md:h-96 object-cover"
+                    class="w-full h-auto max-h-[600px] object-cover rounded-lg shadow-lg"
                 >
             </div>
 

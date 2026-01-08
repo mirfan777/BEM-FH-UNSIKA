@@ -322,7 +322,7 @@
         <hr/>
         <div class="flex w-full justify-center">
             <div class="pt-8 text-center text-white text-sm">
-                © 2025 {{ $siteProfile->name }} — All Rights Reserved
+                © 2025 {{ $siteProfile->name }} – All Rights Reserved
             </div>
         </div>
     </div>

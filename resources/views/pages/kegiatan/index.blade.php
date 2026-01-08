@@ -17,7 +17,7 @@
     <main class="max-w-7xl mx-4 sm:mx-8 lg:mx-20 my-20 px-6 sm:px-8 lg:px-12 py-8 sm:py-12">
     <section class="bg-white">
         <div class="mx-auto">
-            <p class="text-red-800 font-semibold mb-10" data-aos="fade-up">
+            <p class="text-red-800 font-semibold mb-10" data-aos="fade-down">
                 Publikasi > Kajian
             </p>
             <h1 class="text-4xl font-bold mb-6" data-aos="fade-up" data-aos-delay="100">
