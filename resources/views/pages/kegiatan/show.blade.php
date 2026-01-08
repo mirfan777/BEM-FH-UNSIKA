@@ -15,7 +15,7 @@
     <x-guest.layout>
     <!-- Page Header -->
     
-    <section class="max-w-7xl mx-4 sm:mx-8 lg:mx-20 my-20 px-6 sm:px-8 lg:px-12 py-8 sm:py-12">
+    <section class="mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 my-20 md:mx-20">
  <!-- Breadcrumb -->
     <nav class="mb-8" data-aos="fade-down">
         <p class="text-red-800 font-semibold">

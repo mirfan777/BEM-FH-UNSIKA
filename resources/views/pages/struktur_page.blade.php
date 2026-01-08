@@ -7,11 +7,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link href="{{ asset('aos/aos.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ asset('storage/' . $siteProfile->logo) }}" type="image/x-icon">
 </head>
 
 <body class="bg-gray-50">
     <x-guest.layout>
-        <main class="container mx-auto px-5 py-8 max-w-7xl mt-20 md:mt-32">
+        <main class="mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 my-20 md:mx-20">
             <!-- Breadcrumb -->
             <div class="mb-8">
                 <p class="text-red-800 font-semibold" data-aos="fade-down">Struktur Organisasi</p>
